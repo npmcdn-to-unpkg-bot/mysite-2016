@@ -1,0 +1,50 @@
+/*  POST
+============================================================================ */
+
+// Width
+$xs: 400px;
+$sm: 600px;
+$md: 800px;
+$lg: 1000px;
+$xl: 1200px;
+
+$sizes: (
+    xs: $xs,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl
+);
+
+$gutter: 4px;
+
+$spacing-unit:     30px;
+// Width of the content area
+$content-width:    1000px;
+
+
+#postrender {
+    display: auto;
+}
+
+/*  CONFIG
+============================================================================ */
+@import "config/variables",
+        "config/helper",
+        "config/mixins",
+        "config/grid";
+
+/*  UTILITY
+============================================================================ */
+@import "utility/ui-helpers";
+@import "utility/ui-animation";
+
+
+/* COMPONENET
+============================================================================ */
+@import "component/home";
+@import "component/box";
+@import "component/about";
+@import "component/project";
+
+

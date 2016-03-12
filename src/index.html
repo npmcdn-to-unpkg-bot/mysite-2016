@@ -1,0 +1,110 @@
+---
+layout: default
+regenerate: true
+aboutImage: /assets/images/profile.jpg
+---
+
+<div class="startscreen">
+    <div class="startscreen-content">
+        <h2>Furuholm</h2>
+        <h1>Web developer</h1>
+    </div>
+</div>
+
+<div class="home mb4">
+
+    <section class="home-intro py4" style="background-image: url(/assets/images/background.jpg);">
+        <div class="wrapper-md ">
+            <h2 class="home-intro__title">Welcome!</h2>
+            <span class="home-intro__text">Take a look at my projects ↓</span>
+        </div>
+    </section>
+
+    <section class="home-sandbox pt4">
+        <div class="wrapper-md">
+            <h2 class="home-heading">
+                <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt="">
+                Playground
+            </h2>
+            <p>These are beta projects I'm working on and aren't quite ready to go live.</p>
+            <div class="box__container col-container mxn2">
+                {% assign projects = site.web-personal | sort='date, title' %}
+                {% for project in projects reversed %}
+                <div class="box__item col col-12 xs-col-6 sm-col-4 box__item--inner">
+                    <a href="{{ site.url }}{{ project.url }}">
+                        <div class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
+                        </div>
+                    </a>
+                    <span class="box__caption">
+                      {{ project.title }}
+                    </span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <div class="home-background"></div>
+
+    <div id="postRender">
+        {% if site.web-business %}
+        <section class="home-live mt4 wrapper-md">
+            <h2 class="home-heading">
+                <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt="">
+                Live Projects
+            </h2>
+            <p>These are projects I have delivered or are production ready.</p>
+            <div class="box__container col-container">
+                {% assign projects = site.web-business | sort='date, title' %}
+                {% for project in projects reversed %}
+                <div class="box__item col col-12 xs-col-6 sm-col-4 box__item--inner">
+                    <a href="{{ site.url }}{{ project.url }}">
+                        <div class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-main }});">
+                        </div>
+                    </a>
+                    <span class="box__caption">
+                        {{ project.title }}
+                    </span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        {% if site.posts %}
+        <section class="home-blog mt4 wrapper-md">
+            <h2 class="home-heading"><img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt="">Blog</h2>
+            <div class="home-blog__content">
+                {% assign posts = site.posts | sort='date, title' %}
+                {% for post in posts reversed %}
+                <div class="box__item--inner box__item--blog mb3">
+                    <h3>{{ post.title }}</h3>
+                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    <!-- <div class="box__image">
+                        <img src="{{ site.url }}{{ post.image }}" alt="">
+                    </div> -->
+
+                    {{ post.excerpt }}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <section class="home-about mt4">
+            <div class="home-about__part home-about__part--text">
+                <div class="home-about__content">
+                    <h2>Hello!</h2>
+                    <p>I'm a Swedish front-end web developer. My main areas of expertise are JavaScript, PHP and CSS.<br>
+                    I studied web development and graphic design for 2 years in Sweden and exclusively web development for one semester in Canberra, Australia. <br>
+                    I'm currently working at a agency called <a href="//grandpublic.se" target="_blanck" class="link">Grand Public</a>
+                    </p>
+                </div>
+            </div>
+            <div class="home-about__part home-about__part--image" style="background-image: url({{ site.url }}{{ page.aboutImage }})">
+            </div>
+        </section>
+
+        <h2 class="center mt4 mb3 home-phone"><a href="tel:'+4673-072 92 79">+46 730 72 92 79</a></h2>
+    </div>
+</div>

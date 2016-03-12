@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article class="project">
+
+    <header class="project-header" style="background-image: url({{ site.url }}/assets/images/{{ page.image-background }}); ">
+        <h1 class="project-title">{{ page.title }}</h1>
+    </header>
+    <div class="project-content wrapper py4">
+        <div class="project__text col col-12 sm-col-8">
+            <div class="project__text-inner">
+                <h2>About</h2>
+                {{ content }}
+            </div>
+        </div>
+        <div class="project__info col col-12 sm-col-4">
+            {% if page.site_url %}
+            <ul class="mb2">
+                <h3>Live site</h3>
+                <a href="{{ page.site_url }}" target="_blank">{{ page.title }}</a>
+            </ul>
+            {% endif %}
+            <ul>
+                <h3>Tools</h3>
+                {% for tool in page.tools %}
+                    <li>{{ tool }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% if page.images %}
+        <!-- TODO: insert flickr grid -->
+        <section class="gallery wrapper col col-12">
+            {% for image in page.images %}
+                <img src="{{ site.url }}/assets/images/{{ image }}" alt="">
+            {% endfor %}
+        </section>
+        {% endif %}
+    </div>
+</article>
+

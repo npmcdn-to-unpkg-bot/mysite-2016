@@ -1,0 +1,33 @@
+/* Component: Start Screen
+============================================================================ */
+
+.startscreen {
+    @include fade-out(2s, 4s);
+    pointer-events: none;
+    // display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999999;
+
+
+    &-content {
+        @include position();
+        text-align: center;
+
+
+        h1 {
+            @include fade-in-down(4s, 2s);
+        }
+
+        h2 {
+            @include fade-in(2s, 1s);
+            font-size: 6em;
+        }
+    }
+}

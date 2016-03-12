@@ -1,0 +1,160 @@
+/* Utility: UI animation
+============================================================================ */
+@mixin hardwareAccel() {
+    // Improve performance on mobile/tablet devices
+    transform: translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+    // Improve aliasing on mobile/tablet devices
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin fontSmooth() {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin forceBlockLevel() {
+    // Transforms need to be block-level to work
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@mixin hacks() {
+    @include forceBlockLevel();
+    @include hardwareAccel();
+    @include improveAntiAlias();
+    @include fontSmooth();
+}
+
+%fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+@keyframes fadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@mixin fade-out($time:2s, $delay:0s) {
+    animation-name: fadeOut;
+    animation-duration: $time;
+    animation-delay: $delay;
+    animation-fill-mode:forwards;
+    transition-timing-function: ease-in-out;
+    @include hacks();
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@mixin fade-in($time:2s, $delay:0s) {
+    animation-name: fadeIn;
+    animation-duration: $time;
+    animation-fill-mode: both;
+    animation-delay: $delay;
+    transition-timing-function: ease-in-out;
+    @include hacks();
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@mixin fade-in-down($time:2s, $delay:0s) {
+    animation-name: fadeInDown;
+    animation-duration: $time;
+    animation-delay: $delay;
+    animation-fill-mode: both;
+    transition-timing-function: ease-out;
+    @include hacks();
+}
+
+.u-zoom-in {
+    animation-name: zoomIn
+}
+
+.pulse {
+    animation-name: pulse;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animated.infinite {
+    animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+    animation-duration: 2s;
+}
+
+
+
+/* Underline From Center */
+@mixin underline-from-center {
+    $duration: 0.3s !default;
+    $activeColor: #2098D1 !default;
+
+    @include hacks();
+    position: relative;
+    overflow: hidden;
+    vertical-align: bottom;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        background: $activeColor;
+        height: 2px;
+        transition-property: "left, right";
+        transition-duration: $duration;
+        transition-timing-function: ease-out;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+
+        &:before {
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.underline-from-center {
+    @include underline-from-center();
+}
+
+
+
