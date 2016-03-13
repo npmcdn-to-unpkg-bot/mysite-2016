@@ -1,6 +1,6 @@
 // Fonts
 $font-main: 'Droid Serif', "Goudy Old Style", Times, serif;
-$font-body: Arial, Helvetica, sans-serif;
+$font-copy: Arial, Helvetica, sans-serif;
 
 
 // Colors
@@ -11,6 +11,8 @@ $color-main-light: lighten($color-main, 10%);
 $color-secondary: #FFC107;
 
 $color-link: #283593;
+$color-link-visited: lighten(#283593, 15%);
+$color-link-hover: darken(#283593, 15%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);

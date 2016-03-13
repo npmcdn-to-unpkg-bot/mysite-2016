@@ -6,17 +6,22 @@
     background-color: #fff;
     background-size: cover;
     background-attachment: fixed;
-    // height: 300px;
     color: #fff;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     text-align: center;
+    padding: 5em 0;
+
+    @include media-query($sm) {
+        padding: 7em 0;
+    }
 
     &__title {
         font-size: 3em;
         font-weight: 300;
+        padding-bottom: 0.5rem;
         // text-shadow: 0 1px 2px rgba(#000, 0.2);
 
-        @media screen and (min-width: $sm) {
+        @media screen and (min-width: $md) {
             font-size: 5em;
         }
     }
@@ -46,6 +51,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+
+    // Optimization
+    will-change: transform;
+    transform: translateY(0);
 }
 
 .home-heading {
@@ -98,14 +107,13 @@
 .home-sandbox {
     background-color: $color-background;
 }
-.home-blog {
+.home-blog__content {
 
-    &__content {
-        columns: 300px 1;
+    @include col(1);
+    float: left;
 
-        @media (min-width: 600px) {
-            columns: 300px 2;
-        }
+    @include media-query($sm) {
+        @include col(1);
     }
 }
 
@@ -114,6 +122,7 @@
     flex-wrap: wrap;
     background-color: #fff;
     @extend %clearfix;
+    position: relative;
 
     &__part {
 
@@ -130,14 +139,14 @@
             background-repeat: no-repeat;
             background-position: center center;
 
-            @media screen and (max-width: $sm) {
+            @media screen and (max-width: $md) {
                 @include aspect-ratio(16,9);
 
             }
 
-            @include media-query($sm) {
-                width: 50%;
-            };
+            // @include media-query($sm) {
+            //     width: 50%;
+            // };
             @include media-query($md) {
                 width: 60%;
             };
@@ -145,9 +154,9 @@
 
         &--text {
 
-            @include media-query($sm) {
-                width: 50%;
-            };
+            // @include media-query($sm) {
+            //     width: 50%;
+            // };
             @include media-query($md) {
                 width: 40%;
             };
@@ -156,9 +165,10 @@
 
     &__content {
         padding: 60px 20px;
-        @include media-query($sm) {
-            max-width: 400px;
+        @include media-query($md) {
+            max-width: 450px;
             padding: 80px 30px;
+            float: right;
         };
     }
 }

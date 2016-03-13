@@ -1,7 +1,7 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: Furuholm
-description: Site for myself
+description: '© Anton Furuholm'
 url: http://localhost:3000
 logo: /assets/images/logo-black.svg
 
@@ -21,13 +21,13 @@ defaults:
 
   - scope:
       path: ''
-      type: 'web-personal'
+      type: 'web-current'
     values:
       layout: 'project'
 
   - scope:
       path: ''
-      type: 'web-business'
+      type: 'web-live'
     values:
       layout: 'project'
 
@@ -90,12 +90,12 @@ jekyll-archives:
     tags: '/tag/:name/'
 
 collections:
-  web-personal:
+  web-current:
     output: true
     layout: project
-    permalink: /personal/:path/
+    permalink: /current/:path/
 
-  web-business:
+  web-live:
     output: true
     layout: project
     permalink: /live/:path/

@@ -2,7 +2,16 @@
 ============================================================================ */
 
 .sub-nav {
-    // position: fixed;
+    white-space: nowrap;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    ul {
+        padding: 0;
+    }
 }
 
 .sub-nav__item {
@@ -11,10 +20,19 @@
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: $font-copy;
+    // text-transform: uppercase;
+    min-width: 122px;
 
     a {
         display: block;
-        padding: 10px;
+        padding: 1em 10px;
+        color: #666;
+        font-size: 0.8em;
+
+        @include media-query($sm) {
+           font-size: 0.9em;
+        }
     }
 
     &:hover {

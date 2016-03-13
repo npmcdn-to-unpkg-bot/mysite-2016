@@ -2,17 +2,17 @@
 
     <div class="wrapper">
 
-        <h2 class="footer-heading">{{ site.title }}</h2>
+        <h2 class="site-footer-heading">{{ site.title }}</h2>
 
-        <div class="footer-col-wrapper">
-            <div class="footer-col footer-col-1 col col-12 sm-col-4">
+        <div class="site-footer__col-wrapper">
+            <div class="site-footer__col">
                 <ul class="contact-list">
                     <li>{{ site.title }}</li>
-                    <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+                    <li><a href="mailto:{{ site.author.email }}" class="link">{{ site.author.email }}</a></li>
                 </ul>
             </div>
 
-            <div class="footer-col footer-col-2 col col-12 sm-col-4 sm-center">
+            <div class="site-footer__col">
                 <ul class="social-media-list">
                     <li>
                         <a href="https://twitter.com/{{ site.author.twitter }}">
@@ -34,7 +34,7 @@
                 </ul>
             </div>
 
-            <div class="footer-col footer-col-3 col col-12 sm-col-4 text-right">
+            <div class="site-footer__col">
                 <p class="text">{{ site.description }}</p>
             </div>
         </div>

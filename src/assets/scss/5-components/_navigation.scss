@@ -12,77 +12,78 @@ $nav-small: 60px;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
-    // Positioning context for the mobile navigation icon
+    // Positioning context for the mobile navigation menu
     position: relative;
 }
 
-
 .site-nav {
-    float: right;
-    line-height: 56px;
+    display: none;
 
-    .menu-icon {
+    @include media-query($sm) {
         display: block;
-        padding: 6px;
-        @extend %clearfix;
+        float: right;
+    }
+}
+
+.site-nav-mobile {
+    display: block;
+
+    @include media-query($sm) {
+        display: none;
+    }
+}
+
+.site-nav__list {
+    clear: both;
+    display: none;
+    display: block;
+    width: 100%;
+
+    &:target {
+        display: block;
+    }
+}
+
+.site-nav__item {
+    text-transform: uppercase;
+    padding: 1em 0.5em;
+    display: block;
+
+    @include media-query($sm, $option: max) {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #eee;
+        @include underline-from-left();
     }
 
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
+    @include media-query($sm) {
+        @extend .underline-from-center;
+        display: inline-block;
+    }
+}
 
-        // Gaps between nav items, but not on the last one
-        &:not(:last-child) {
-            margin-right: 20px;
+.site-nav__menu {
+    // display: block;
+    // padding: 6px;
+    // @extend %clearfix;
+
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding: 10px;
+    text-align: center;
+
+    > svg {
+        width: 18px;
+        height: 15px;
+
+        path {
+            fill: $grey-color-dark;
         }
     }
 
     @include media-query($sm) {
-        position: absolute;
-        top: 9px;
-        right: $spacing-unit / 2;
-        background-color: $background-color;
-        border: 1px solid $grey-color-light;
-        border-radius: 5px;
-        text-align: right;
-
-        .menu-icon {
-            display: none;
-            float: right;
-            width: 36px;
-            height: 26px;
-            line-height: 0;
-            padding: 10px;
-            text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
-        }
-
-        .trigger {
-            clear: both;
-            display: none;
-        }
-
-        &:hover .trigger {
-            display: block;
-            padding-bottom: 5px;
-        }
-
-        .page-link {
-            display: block;
-            padding: 5px 10px;
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
-            margin-left: 20px;
-        }
+        display: none;
     }
 }

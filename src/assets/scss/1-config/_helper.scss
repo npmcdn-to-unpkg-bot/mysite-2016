@@ -51,8 +51,8 @@
 
 /* Component: Media Queries
 ============================================================================ */
-@mixin media-query($size) {
-    @media screen and (min-width: $size) {
+@mixin media-query($size, $option: min) {
+    @media screen and (#{$option}-width: $size) {
         @content;
     }
 }
@@ -87,6 +87,10 @@
 }
 .wrapper-full {
     @include wrapper(100%);
+}
+.wrapper-no-padding {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 @each $name, $size in $sizes {
