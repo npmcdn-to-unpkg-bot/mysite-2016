@@ -38,7 +38,7 @@
 }
 
 // Shadow
-@mixin shadow($x:0, $y:1px, $z:2px, $color:rgba(#000, 0.2)) {
+@mixin box-shadow($x:0, $y:1px, $z:2px, $color:rgba(#000, 0.2)) {
 
     @if type-of($x) == 'color' {
         box-shadow: 0 1px 2px $x;
@@ -51,7 +51,7 @@
 
 /* Component: Media Queries
 ============================================================================ */
-@mixin media($size) {
+@mixin media-query($size) {
     @media screen and (min-width: $size) {
         @content;
     }
@@ -66,7 +66,7 @@
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
 
-    @include media($md) {
+    @include media-query($md) {
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
@@ -77,7 +77,7 @@
     @extend %wrapper;
     @extend %clearfix;
 
-    @include media($md) {
+    @include media-query($md) {
         max-width: calc(#{$width} - (#{$spacing-unit}));
     }
 }

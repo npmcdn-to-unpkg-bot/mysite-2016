@@ -11,33 +11,50 @@ aboutImage: /assets/images/profile.jpg
     </div>
 </div>
 
-<div class="home mb4">
+<div class="home">
+    <nav class="sub-nav">
+        <ul>
+            <li class="sub-nav__item"><a href="#sandbox">Playground</a>
+            <li class="sub-nav__item"><a href="#live-projects">Live Project</a>
+            <li class="sub-nav__item"><a href="#blog">Blog</a>
+            <li class="sub-nav__item"><a href="#about">About</a>
+        </ul>
+    </nav>
 
-    <section class="home-intro py4" style="background-image: url(/assets/images/background.jpg);">
+    <section class="home-intro pt4 pb4" style="background-image: url(/assets/images/background.jpg);">
         <div class="wrapper-md ">
             <h2 class="home-intro__title">Welcome!</h2>
             <span class="home-intro__text">Take a look at my projects ↓</span>
         </div>
     </section>
 
-    <section class="home-sandbox pt4">
+    <section class="home-sandbox home-section pb4" id="sandbox">
+        <div class="home-section__header">
+            <div class="wrapper-md home-heading__inner">
+                <div class="home-number">1</div>
+                <h2 class="home-heading">
+                    <!-- <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt=""> -->
+                    Playground
+                </h2>
+                <p>These are beta projects I'm working on and aren't quite ready to go live.</p>
+            </div>
+        </div>
         <div class="wrapper-md">
-            <h2 class="home-heading">
-                <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt="">
-                Playground
-            </h2>
-            <p>These are beta projects I'm working on and aren't quite ready to go live.</p>
+
             <div class="box__container col-container mxn2">
                 {% assign projects = site.web-personal | sort='date, title' %}
                 {% for project in projects reversed %}
-                <div class="box__item col col-12 xs-col-6 sm-col-4 box__item--inner">
-                    <a href="{{ site.url }}{{ project.url }}">
-                        <div class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
-                        </div>
+                <div class="box__item">
+                    <a href="{{ site.url }}{{ project.url }}" class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
                     </a>
-                    <span class="box__caption">
-                      {{ project.title }}
-                    </span>
+                    <div class="box__content">
+                        <h2 class="box__title">
+                          {{ project.title }}
+                        </h2>
+                        <p class="box__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem at minima animi. Distinctio harum est accusamus culpa, nulla doloribus magnam, facere, fugit ex laudantium praesentium molestias! Sed nemo voluptatum molestias.</p>
+                        <a href="{{ site.url }}{{ project.url }}" class="box-readmore link">Read more</a>
+                    </div>
+
                 </div>
                 {% endfor %}
             </div>
@@ -48,50 +65,68 @@ aboutImage: /assets/images/profile.jpg
 
     <div id="postRender">
         {% if site.web-business %}
-        <section class="home-live mt4 wrapper-md">
-            <h2 class="home-heading">
-                <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt="">
-                Live Projects
-            </h2>
-            <p>These are projects I have delivered or are production ready.</p>
-            <div class="box__container col-container">
-                {% assign projects = site.web-business | sort='date, title' %}
-                {% for project in projects reversed %}
-                <div class="box__item col col-12 xs-col-6 sm-col-4 box__item--inner">
-                    <a href="{{ site.url }}{{ project.url }}">
-                        <div class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-main }});">
-                        </div>
-                    </a>
-                    <span class="box__caption">
-                        {{ project.title }}
-                    </span>
+        <section class="home-live home-section" id="live-projects">
+            <div class="wrapper-md ">
+                <div class="home-section__header">
+                    <div class="home-heading__inner">
+                        <div class="home-number">2</div>
+                        <h2 class="home-heading">
+                            <!-- <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt=""> -->
+                            Live Project
+                        </h2>
+                        <p>These are projects I have delivered or are production ready.</p>
+                    </div>
                 </div>
-                {% endfor %}
+
+                <div class="box__container col-container wrapper-md">
+                    {% assign projects = site.web-business | sort='date, title' %}
+                    {% for project in projects reversed %}
+                    <div class="box__item box__item--inner">
+                        <div class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
+                        </div>
+                        <div class="box__content">
+                            <h2 class="box__title">
+                              {{ project.title }}
+                            </h2>
+                            <p class="box__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem at minima animi. Distinctio harum est accusamus culpa, nulla doloribus magnam, facere, fugit ex laudantium praesentium molestias! Sed nemo voluptatum molestias.</p>
+                            <a href="{{ site.url }}{{ project.url }}" class="box__readmore link">Read more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </section>
+
+        <div class="home-background"></div>
         {% endif %}
 
         {% if site.posts %}
-        <section class="home-blog mt4 wrapper-md">
-            <h2 class="home-heading"><img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt="">Blog</h2>
-            <div class="home-blog__content">
-                {% assign posts = site.posts | sort='date, title' %}
-                {% for post in posts reversed %}
-                <div class="box__item--inner box__item--blog mb3">
-                    <h3>{{ post.title }}</h3>
-                    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                    <!-- <div class="box__image">
-                        <img src="{{ site.url }}{{ post.image }}" alt="">
-                    </div> -->
+        <section class="home-blog home-section" id="blog">
+            <div class="wrapper-md">
+                <div class="home-number">3</div>
+                <h2 class="home-heading">
+                    <!-- <img class="heading__icon" src="{{ site.url }}/assets/images/smilie.svg" alt=""> -->
+                    Blog
+                    </h2>
+                <div class="home-blog__content">
+                    {% assign posts = site.posts | sort='date, title' %}
+                    {% for post in posts reversed %}
+                    <div class="box__item--inner box__item--blog mb3">
+                        <h3>{{ post.title }}</h3>
+                        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                        <!-- <div class="box__image">
+                            <img src="{{ site.url }}{{ post.image }}" alt="">
+                        </div> -->
 
-                    {{ post.excerpt }}
+                        {{ post.excerpt }}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </section>
         {% endif %}
 
-        <section class="home-about mt4">
+        <section class="home-about" id="about">
             <div class="home-about__part home-about__part--text">
                 <div class="home-about__content">
                     <h2>Hello!</h2>
@@ -105,6 +140,6 @@ aboutImage: /assets/images/profile.jpg
             </div>
         </section>
 
-        <h2 class="center mt4 mb3 home-phone"><a href="tel:'+4673-072 92 79">+46 730 72 92 79</a></h2>
+        <h2 class="home-phone"><a href="tel:'+4673-072 92 79">+46 730 72 92 79</a></h2>
     </div>
 </div>

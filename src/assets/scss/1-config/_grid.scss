@@ -1,4 +1,10 @@
-
+%gutter {
+    margin: {
+        right: $gutter;
+        left: $gutter;
+        bottom: $gutter*2;
+    }
+}
 /**
  * If you want 5 colums to fit then write 5.
  *
@@ -21,14 +27,19 @@
     }
 }
 
+@mixin col($piece:1, $pie:false) {
 
-%gutter {
-    margin: {
-        right: $gutter;
-        left: $gutter;
-        bottom: $gutter*2;
+    @if type-of($piece) == 'number' and $pie == false {
+       width: calc(100%/#{$piece});
+
+    } @else if type-of($piece) == 'number' and type-of($pie) == 'number' {
+
+        width: calc(#{$piece} / #{$pie} * 100%);
     }
 }
+
+
+
 .col {
   float: left;
   box-sizing: border-box;
@@ -44,53 +55,13 @@
         right: -$gutter;
         left: -$gutter;
     }
+    text-align: center;
 }
 
-// @for $i from 1 through 6 {
-//     .col-#{$i} {
-//         @extend %gutter;
-//         &:last-of-type {
-//             margin-bottom: 0px;
-//         }
-//         width: calc((100%/#{$i}) - (#{$gutter} * 2));
-//     }
-// }
-// @each $name, $size in $sizes {
-
-//     @media (min-width: $size) {
-//         .#{$name}-col {
-//           float: left;
-//           box-sizing: border-box;
-//         }
-
-//         .#{$name}-col-right {
-//           float: right;
-//           box-sizing: border-box;
-//         }
-
-//         @for $i from 1 through 6 {
-//             .#{$name}-col-#{$i} {
-//                 &:nth-last-child(-n+#{$i}) {
-//                     margin-bottom: 0px;
-//                 }
-//                 @extend %gutter;
-//                 width: calc((100%/#{$i}) - (#{$gutter} * 2));
-//             }
-//         }
-//     }
+// [class*='col-'] {
+//   float: left;
 // }
 
-// OLD WAY - under consideration
-
-.col {
-  float: left;
-  box-sizing: border-box;
-}
-
-.col-right {
-  float: right;
-  box-sizing: border-box;
-}
 
 @for $i from 1 through 12 {
     .col-#{$i} {

@@ -6,6 +6,11 @@ html {
     -webkit-font-smoothing: antialiased;
 
 }
+body {
+    // color: #fff;
+    background-color: #fff;
+    // background: linear-gradient(to bottom right, #ffffff, #eeeeee);
+}
 /**
  * Links
  */
@@ -13,8 +18,9 @@ a {
     text-decoration: none;
     color: #000;
 }
+
 .link {
-    color: #283593;
+    color: $color-link;
     position: relative;
     z-index: 0;
     @include underline-from-center();
@@ -32,8 +38,30 @@ a {
 }
 
 
-body {
-    background-color: #EDFBFA;
-
-    // color: #fff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    font-family: $font-main;
+    font-weight: 400;
 }
+
+
+p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: $color-text;
+    font-family: $font-body;
+
+    & + & {
+        margin-bottom: 1em;
+    }
+}
+
+
+

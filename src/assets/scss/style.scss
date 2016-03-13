@@ -1,6 +1,6 @@
 /*  POST
 ============================================================================ */
-
+@charset "utf-8";
 // Width
 $xs: 400px;
 $sm: 600px;
@@ -29,22 +29,26 @@ $content-width:    1000px;
 
 /*  CONFIG
 ============================================================================ */
-@import "config/variables",
-        "config/helper",
-        "config/mixins",
-        "config/grid";
+@import "1-config/variables",
+        "1-config/helper",
+        "1-config/mixins",
+        "1-config/grid";
 
 /*  UTILITY
 ============================================================================ */
-@import "utility/ui-helpers";
-@import "utility/ui-animation";
+@import "2-utility/ui-helpers";
+@import "2-utility/ui-animation";
 
 
 /* COMPONENET
 ============================================================================ */
-@import "component/home";
-@import "component/box";
-@import "component/about";
-@import "component/project";
+@import "5-components/box";
+
+
+/* PAGES
+============================================================================ */
+@import "6-pages/home";
+@import "6-pages/about";
+@import "6-pages/project";
 
 

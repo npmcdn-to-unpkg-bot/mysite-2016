@@ -1,0 +1,27 @@
+/* Component: Sub Navigation
+============================================================================ */
+
+.sub-nav {
+    // position: fixed;
+}
+
+.sub-nav__item {
+    @include col(4);
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    a {
+        display: block;
+        padding: 10px;
+    }
+
+    &:hover {
+        background-color: $color-secondary;
+        a {
+            color: #fff;
+        }
+
+    }
+}
