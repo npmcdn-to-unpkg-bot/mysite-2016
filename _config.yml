@@ -2,7 +2,7 @@
 # Can be used in your theme by calling 'site.title' and so on
 name: Furuholm
 description: '© Anton Furuholm'
-url: http://localhost:3000
+url: http://localhost:1337
 logo: /assets/images/logo-black.svg
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
