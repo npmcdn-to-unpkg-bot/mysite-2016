@@ -103,6 +103,15 @@
         font-size: 2em;
     };
 }
+.home-section__number {
+    text-align: left;
+    background-color: #444;
+    padding: 1em 0;
+
+    div {
+        color: #aaa;
+    }
+}
 
 .home-sandbox {
     background-color: $color-background;

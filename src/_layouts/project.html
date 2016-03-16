@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
-<article class="project">
+<article class="project" itemscope itemtype="http://schema.org/SoftwareApplication">
+    <link itemprop="applicationCategory" href="http://schema.org/WebApplication"/>
 
     <header class="project-header" style="background-image: url({{ site.url }}/assets/images/{{ page.image-background }}); ">
-        <h1 class="project-title">{{ page.title }}</h1>
+        <h1 class="project-title" itemprop="name">{{ page.title }}</h1>
     </header>
     <div class="project-content wrapper py4">
         <div class="project__text col col-12 sm-col-8">
