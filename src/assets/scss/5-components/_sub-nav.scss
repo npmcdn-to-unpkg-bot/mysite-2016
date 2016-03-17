@@ -2,8 +2,10 @@
 ============================================================================ */
 
 .sub-nav {
-	white-space: nowrap;
-	overflow: auto;
+
+    white-space: nowrap;
+    overflow: auto;
+    background-color: #fff;
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -42,4 +44,12 @@
 		}
 
 	}
+}
+
+.subNavFixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    @include box-shadow();
 }

@@ -62,6 +62,17 @@ $nav-small: 60px;
     }
 }
 
+.site-nav__explain {
+    font-size: 0.8em;
+    color: #888;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    pointer-events: none;
+    user-select: none;
+}
+
 .site-nav__menu {
     // display: block;
     // padding: 6px;
