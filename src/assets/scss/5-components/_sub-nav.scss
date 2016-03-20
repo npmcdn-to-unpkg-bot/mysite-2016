@@ -2,47 +2,48 @@
 ============================================================================ */
 
 .sub-nav {
+
     white-space: nowrap;
     overflow: auto;
     background-color: #fff;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
-    ul {
-        padding: 0;
-    }
+	ul {
+		padding: 0;
+	}
 }
 
 .sub-nav__item {
-    @include col(4);
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: $font-copy;
-    // text-transform: uppercase;
-    min-width: 122px;
+	@include col(4);
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-family: $font-copy;
+	// text-transform: uppercase;
+	min-width: 122px;
 
-    a {
-        display: block;
-        padding: 1em 10px;
-        color: #666;
-        font-size: 0.8em;
+	a {
+		display: block;
+		padding: 1em 10px;
+		color: #666;
+		font-size: 0.8em;
 
-        @include media-query($sm) {
-           font-size: 0.9em;
-        }
-    }
+		@include media-query($sm) {
+		   font-size: 0.9em;
+		}
+	}
 
-    &:hover {
-        background-color: $color-secondary;
-        a {
-            color: #fff;
-        }
+	&:hover {
+		background-color: $color-secondary;
+		a {
+			color: #fff;
+		}
 
-    }
+	}
 }
 
 .subNavFixed {

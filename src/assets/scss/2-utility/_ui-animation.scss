@@ -71,7 +71,7 @@
     animation-fill-mode: both;
     animation-delay: $delay;
     transition-timing-function: ease-in-out;
-    @include hacks();
+    // @include hacks();
 }
 
 @keyframes fadeInDown {

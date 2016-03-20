@@ -1,0 +1,33 @@
+.gallery {
+
+}
+
+.gallery-main {
+	background-color: #efefef;
+	padding: 10px;
+	margin: 0;
+
+	text-align: center;
+	position: relative;
+}
+
+.gallery-main__image {
+	// @include position();
+	display: inline-block;
+	object-fit: contain;
+	max-height: 500px;
+
+}
+
+.gallery-list {
+
+}
+
+.gallery-item {
+	display: inline-block;
+	min-width: 200px;
+	height: 200px;
+
+	background-repeat: no-repeat;
+	background-size: cover;
+}

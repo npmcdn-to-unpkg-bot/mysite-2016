@@ -1,8 +1,8 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: Furuholm
-description: "I'm a Swedish Web Developer. Currently working at Grand Public, a digital agency."
-url: http://localhost:3000
+description: '© Anton Furuholm'
+url: http://localhost:1337
 # url: furuholmanton.github.io
 # url: https://furuholm.se
 logo: /assets/images/logo-black.svg

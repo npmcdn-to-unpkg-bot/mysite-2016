@@ -6,8 +6,8 @@ aboutImage: /assets/images/profile.jpg
 
 <div class="startscreen">
     <div class="startscreen-content">
-        <h2>Furuholm</h2>
-        <h3>Web developer</h3>
+        <h2 class="startscreen-heading startscreen-heading--main">Anton Furuholm</h2>
+        <h3 class="startscreen-heading startscreen-heading--sub">Web developer, Designer, Photographer</h3>
     </div>
 </div>
 
@@ -17,13 +17,20 @@ aboutImage: /assets/images/profile.jpg
         <ul class="wrapper wrapper-no-padding">
             <li class="sub-nav__item"><a href="#sandbox">Playground</a>
             <li class="sub-nav__item"><a href="#liveProjects">Live Project</a>
-            <li class="sub-nav__item"><a href="#blog">Blog</a>
-            <li class="sub-nav__item"><a href="#about">About</a>
+            <li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a>
+            <li class="sub-nav__item"><a href="#about">Short About Me</a>
         </ul>
     </nav>
 
     <section class="home-intro" style="background-image: url(/assets/images/background.jpg);">
-        <div class="wrapper-md ">
+    	<!-- <figure class="wrapper-md">
+    		<img src="/assets/images/background.jpg">
+    		<figcaption>
+    			<h1 class="home-intro__title heading">Anton Furuholm</h1>
+    			<h2 class="home-intro__text">Web developer, Designer, Photographer</h2>
+    		</figcaption>
+    	</figure> -->
+        <div class="wrapper-md">
             <h1 class="home-intro__title heading">Anton Furuholm</h1>
             <h2 class="home-intro__text">Web developer, Designer, Photographer</h2>
         </div>
@@ -37,9 +44,9 @@ aboutImage: /assets/images/profile.jpg
 
                 <div class="home-number">1</div>
                 <h2 class="home-heading heading">
-                    Current Projects
+                    Current web Projects
                 </h2>
-                <p>These are projects I'm working on.</p>
+                <p>These are web projects I'm working on.</p>
                 <p></p>
             </div>
         </header>
@@ -77,7 +84,7 @@ aboutImage: /assets/images/profile.jpg
                     <div class="home-heading__inner">
                         <div class="home-number">2</div>
                         <h2 class="home-heading heading">
-                            Live Project
+                            Live web Project
                         </h2>
                         <p>These are projects I have delivered or are ready for public use.</p>
                     </div>
@@ -93,7 +100,10 @@ aboutImage: /assets/images/profile.jpg
                             <h2 class="box__title">
                               {{ project.title }}
                             </h2>
-                            <p class="box__copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem at minima animi. Distinctio harum est accusamus culpa, nulla doloribus magnam, facere, fugit ex laudantium praesentium molestias! Sed nemo voluptatum molestias.</p>
+                            <div class="box__copy">
+								{{ project.excerpt }}
+                            	<p></p>
+                            </div>
                             <a href="{{ site.url }}{{ project.url }}" class="box-readmore link">Read more</a>
                         </div>
                     </div>

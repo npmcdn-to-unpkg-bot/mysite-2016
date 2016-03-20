@@ -6,7 +6,7 @@
 @charset "utf-8";
 
 #postrender {
-    display: none;
+	visibility: hidden;
 }
 
 /*  CONFIG
@@ -35,3 +35,7 @@
 @import "5-components/navigation";
 @import "5-components/sub-nav";
 @import "5-components/start-screen";
+
+/* PAGES
+============================================================================ */
+@import "6-pages/home-initial";

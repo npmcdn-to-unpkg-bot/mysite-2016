@@ -14,8 +14,8 @@
     <nav class="site-nav">
       <div class="site-nav__list" id="siteNav">
         <p class="site-nav__explain">Pages:</p>
-        {% for page in site.data.pages %}
-          <a class="site-nav__item" href="/about/">{{ page.title }}</a>
+        {% for nav in site.data.pages %}
+          <a class="site-nav__item" href="{{ nav.url }}">{{ nav.title }}</a>
         {% endfor %}
       </div>
     </nav>
@@ -24,8 +24,8 @@
 
 <nav class="site-nav-mobile">
   <div class="site-nav__list" id="siteNav">
-    {% for page in site.data.pages %}
-      <a class="site-nav__item" href="/about/">{{ page.title }}</a>
+    {% for nav in site.data.pages %}
+      <a class="site-nav__item" href="{{ nav.url }}">{{ nav.title }}</a>
     {% endfor %}
   </div>
 </nav>

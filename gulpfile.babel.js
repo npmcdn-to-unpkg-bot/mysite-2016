@@ -215,7 +215,8 @@ gulp.task('serve', () => {
     },
     server: {
       baseDir: ['.tmp', 'dist']
-    }
+    },
+    port: 1337
   });
 
   // Watch various files for changes and do the needful
