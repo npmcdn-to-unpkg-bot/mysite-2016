@@ -7,7 +7,7 @@ image-preview: allmoge-preview.jpg
 image-background: allmoge-blur.jpg
 image-main: allmoge.jpg
 images:
-  - null
+  - allmoge.jpg
 tools:
   - Mustache.js
   - Instagram API

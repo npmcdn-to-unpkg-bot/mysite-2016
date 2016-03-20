@@ -58,14 +58,18 @@
 	for (var i = 0; i < items.length; i++) {
 
 		items[i].addEventListener("click", function(e) {
-			// var href = this.href;
-			// href = href.split("/");
-			// href = href[href.length-1];
-			// var elem = _.get(href)[0];
-			// var y = elem.offsetTop;
+			var href = this.href;
+			href = href.split("/");
+			href = href[href.length-1];
+			var elem = _.get(href)[0];
+			// var y = elem.getBoundingClientRect().top;
+
+			var bodyRect = document.body.getBoundingClientRect(),
+			    elemRect = elem.getBoundingClientRect(),
+			    offset   = elemRect.top - bodyRect.top;
 
 			e.preventDefault();
-			TweenLite.to(window, 2, {scrollTo:{y:300}, ease:Power2.ease});
+			TweenLite.to(window, 2, {scrollTo:{y:offset}, ease:Power2.ease});
 		});
 	}
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ⚡>
+<html 💚>
 
 {% include head.html %}
 
-<body class="{% for class in page.classes %}{{class}} {% endfor %}">
+<body class="body{% for class in page.classes %} {{class}}{% endfor %}">
 
     {% include header.html %}
 
@@ -40,22 +40,6 @@
       // ga('send', 'pageview');
 
     </script>
-
-    <amp-analytics type="googleanalytics" id="analytics-ga">
-    <script type="application/json">
-    {
-      "vars": {
-        "account": "UA-50142288-2"
-      },
-      "triggers": {
-        "trackPageview": {
-          "on": "visible",
-          "request": "pageview"
-        }
-      }
-    }
-    </script>
-    </amp-analytics>
 
 </body>
 </html>
