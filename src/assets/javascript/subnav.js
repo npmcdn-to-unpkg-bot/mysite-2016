@@ -53,6 +53,23 @@
 	}
 
 
+	var items = _.get(".sub-nav__item a");
+
+	for (var i = 0; i < items.length; i++) {
+
+		items[i].addEventListener("click", function(e) {
+			// var href = this.href;
+			// href = href.split("/");
+			// href = href[href.length-1];
+			// var elem = _.get(href)[0];
+			// var y = elem.offsetTop;
+
+			e.preventDefault();
+			TweenLite.to(window, 2, {scrollTo:{y:300}, ease:Power2.ease});
+		});
+	}
+
+
 })();
 
 

@@ -5,6 +5,8 @@ date: 2016-01-01
 image-preview: walnut-preview.jpg
 image-background: walnut-blur.jpg
 image-main: walnut.jpg
+images:
+  - walnut.jpg
 tools:
   - Vanilla JS
 

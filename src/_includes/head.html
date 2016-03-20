@@ -5,75 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 
-    <!-- AMP -->
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
-    </style>
-    <noscript>
-        <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
-    </noscript>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <!-- END AMP -->
 
-  <!-- Icons -->
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="identifier-url" content="https://www.furuholm.se/" />
-  <meta name="title" content="Web Developer" />
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="abstract" content="Swedish Web Developer" />
-  <meta name="keywords" content="Web, app, developer, code, design, javascript, html, css, front-end, frontend" />
-  <meta name="author" content="Anton Furuholm" />
-  <meta name="language" content="EN" />
-  <meta name="copyright" content="© 2016 Furuholm" />
-  <meta name="robots" content="All" />
-  <meta property="og:title" content="Web Developer">
-  <meta property="og:site_name" content="Furuholm.se">
-  <meta property="og:url" content="https://furuholm.se">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <!-- <meta property="og:description" content="I'm a Swedish Web Developer. Currently working at Grand Public, a digital agency."> -->
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://farm1.staticflickr.com/484/20265057079_b3da005864_z.jpg">
-  <meta name="twitter:card" content="photo">
-  <meta name="twitter:site" content="@AntonFuruholm">
-  <meta name="twitter:title" content="Web Developer">
-  <meta name="twitter:image:src" content="https://farm1.staticflickr.com/484/20265057079_b3da005864_z.jpg">
+  	<!-- Icons -->
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+  	<meta name="identifier-url" content="https://www.furuholm.se/" />
+  	<meta name="title" content="Web Developer" />
+  	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | 	truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  	<meta name="abstract" content="Swedish Web Developer" />
+  	<meta name="keywords" content="Web, app, developer, code, design, javascript, html, css, front-end, 	frontend" />
+  	<meta name="author" content="Anton Furuholm" />
+  	<meta name="language" content="EN" />
+  	<meta name="copyright" content="© 2016 Furuholm" />
+  	<meta name="robots" content="All" />
+  	<meta property="og:title" content="Web Developer">
+  	<meta property="og:site_name" content="Furuholm.se">
+  	<meta property="og:url" content="https://furuholm.se">
+  	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | 	strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  	<!-- <meta property="og:description" content="I'm a Swedish Web Developer. Currently working at Grand 	Public, a digital agency."> -->
+  	<meta property="og:type" content="website">
+  	<meta property="og:image" content="https://farm1.staticflickr.com/484/20265057079_b3da005864_z.jpg">
+  	<meta name="twitter:card" content="photo">
+  	<meta name="twitter:site" content="@AntonFuruholm">
+  	<meta name="twitter:title" content="Web Developer">
+  	<meta name="twitter:image:src" content="https://farm1.staticflickr.com/484/20265057079_b3da005864_z.jpg">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#009688">
-  <link rel="shortcut icon" href="/favicons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
-  <meta name="msapplication-config" content="favicons/browserconfig.xml">
-  <meta name="theme-color" content="#009688">
-  <link rel="manifest" href="/favicons/manifest.json">
+  	<!-- Favicons -->
+  	<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  	<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+  	<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+  	<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+  	<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+  	<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  	<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+  	<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+  	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+  	<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+  	<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+  	<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+  	<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+  	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#009688">
+  	<link rel="shortcut icon" href="/favicons/favicon.ico">
+  	<meta name="msapplication-TileColor" content="#da532c">
+  	<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+  	<meta name="msapplication-config" content="favicons/browserconfig.xml">
+  	<meta name="theme-color" content="#009688">
+  	<link rel="manifest" href="/favicons/manifest.json">
 
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | 	truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: <site class="	"></site>url }}">
 
-  {% include noscript.html %}
+  	<!-- {% include noscript.html %} -->
 
-  <!-- CSS -->
-  <!-- inject:css -->
+  	<!-- CSS -->
+  	<!-- inject:css -->
+  	<link rel="stylesheet" href="/assets/stylesheets/initial.css">
+  	<!-- endinject -->
 
-  <link rel="stylesheet" href="/assets/stylesheets/initial.css">
-
-  <!-- endinject -->
     <link rel="stylesheet" href="/assets/stylesheets/initial.css">
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 
-  <!-- RSS -->
-  {% feed_meta %}
+
+  	<!-- RSS -->
+  	{% feed_meta %}
 </head>

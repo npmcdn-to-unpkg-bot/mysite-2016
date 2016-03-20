@@ -1,37 +1,41 @@
-function onScroll (evt) {
+// function onScroll (evt) {
 
-  // Store the scroll value for laterz.
-  var lastScrollY = window.scrollY;
+//   // Store the scroll value for laterz.
+//   var lastScrollY = window.scrollY;
 
-  // Prevent multiple rAF callbacks.
-  if (scheduledAnimationFrame) {
-    return;
-  }
+//   // Prevent multiple rAF callbacks.
+//   if (scheduledAnimationFrame) {
+//     return;
+//   }
 
-  var scheduledAnimationFrame = true;
-  requestAnimationFrame(evt);
-}
+//   var scheduledAnimationFrame = true;
+//   requestAnimationFrame(evt);
+// }
 
+(function gallery() {
 
+    function getFlickrImages() {
 
-(function gallery(){
+    }
 
-    function getFlickr() {
+    function get500pxImages() {
 
     }
 
 })();
 
+(function check_if_user_has_visited_before() {
 
-(function visited() {
+    if (typeof(Storage) !== 'undefined') {
 
-    if(typeof(Storage) !== "undefined") {
+        if (localStorage.hasVisitedBefore) {
+            var start = _.get('.startscreen')[0];
 
-        if(localStorage.hasVisitedBefore) {
-            var start = _.get(".startscreen")[0];
-            start.style.display = "none";
+            start.style.display = 'none';
+
         } else {
             localStorage.hasVisitedBefore = true;
+
         }
 
     } else {

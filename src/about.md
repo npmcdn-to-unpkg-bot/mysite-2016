@@ -2,14 +2,14 @@
 layout: page
 title: About
 permalink: /about/
+classes: 
+  - about
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your
-Jekyll theme, as well as basic Jekyll usage documentation at
-[jekyllrb.com](http://jekyllrb.com/)
+#Anton Furuholm
 
-You can find the source code for the Jekyll new theme at:
-[github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+I'm a Swedish front-end web developer. My main areas of expertise are JavaScript, PHP and CSS.
 
-You can find the source code for Jekyll at
-[github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+I studied web development and graphic design for 2 years in Sweden and exclusively web development for one semester in Canberra, Australia. 
+I'm currently working at a agency called 
+<a href="//grandpublic.se" target="_blank" class="link">Grand Public</a>
