@@ -42,12 +42,13 @@ aboutImage: /assets/images/profile.jpg
         <header class="home-section__header">
             <div class="wrapper-md home-heading__inner">
 
-                <div class="home-number">1</div>
+                <!-- <div class="home-number">1</div> -->
+                <p class="home-order">1</p>
+                <p class="home-section__border"></p>
                 <h2 class="home-heading heading">
                     Current web Projects
                 </h2>
                 <p>These are web projects I'm working on.</p>
-                <p></p>
             </div>
         </header>
 
@@ -63,11 +64,10 @@ aboutImage: /assets/images/profile.jpg
                         <h2 class="box__title heading">
                           {{ project.title }}
                         </h2>
-                        <div class="box__copy">
-                            {{ project.excerpt }}
-                            <p></p>
-                        </div>
-                        <a href="{{ site.url }}{{ project.url }}" class="box-readmore link">Read more</a>
+                        <p class="box__copy">
+                            {{ project.excerpt | remove: '<p>' | remove: '</p>' }}
+                        </p>
+                        <a href="{{ site.url }}{{ project.url }}" class="box-readmore">Read more</a>
                     </div>
                 {% endfor %}
             </ul>
@@ -82,7 +82,9 @@ aboutImage: /assets/images/profile.jpg
             <div class="wrapper-md ">
                 <div class="home-section__header">
                     <div class="home-heading__inner">
-                        <div class="home-number">2</div>
+                        <!-- <div class="home-number">2</div> -->
+		                <p class="home-order">2</p>
+		                <p class="home-section__border"></p>
                         <h2 class="home-heading heading">
                             Live web Project
                         </h2>
@@ -104,7 +106,7 @@ aboutImage: /assets/images/profile.jpg
 								{{ project.excerpt }}
                             	<p></p>
                             </div>
-                            <a href="{{ site.url }}{{ project.url }}" class="box-readmore link">Read more</a>
+                            <a href="{{ site.url }}{{ project.url }}" class="box-readmore">Read more</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -120,7 +122,9 @@ aboutImage: /assets/images/profile.jpg
             <div class="wrapper-md">
                 <div class="home-section__header">
                     <div class="wrapper-md home-heading__inner">
-                        <div class="home-number">3</div>
+                        <!-- <div class="home-number">3</div> -->
+		                <p class="home-order">3</p>
+		                <p class="home-section__border"></p>
                         <h2 class="home-heading heading">
                             Blog
                         </h2>

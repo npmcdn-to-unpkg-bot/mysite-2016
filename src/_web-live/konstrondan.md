@@ -10,3 +10,4 @@ tools:
 
 ---
 
+Konstrondan is a site for creative art people.

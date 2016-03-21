@@ -1,7 +1,7 @@
 // Fonts
-$font-main: 'Droid Serif', "Goudy Old Style", Times, serif;
-$font-copy: Arial, Helvetica, sans-serif;
-
+$font-copy: 'Lora', Cambria, Georgia, "Times New Roman", Times,serif;
+$font-main: 'Roboto', Arial, Helvetica, sans-serif;
+$font-heading: '';
 
 // Colors
 $color-main: #ffb106; // #fdb70a;
@@ -21,7 +21,8 @@ $grey-color-dark:  darken($grey-color, 25%);
 $text-color:       #222;
 $color-text:       #444;
 $background-color: #fdfdfd;
-$color-background: #f6f6f6;
+// $color-background: #f6f6f6;
+$color-background: #fff;
 
 $base-line-height: 1.5;
 

@@ -1,0 +1,22 @@
+.button-round {
+	border: 1px solid #444;
+	padding: 0 1.4em;
+	color: #666;
+	border-radius: 50px;
+	height: 2.5em;
+	line-height: 2.5em;
+
+
+
+	&:hover {
+		color: #fff;
+		border-color: #fff;
+		transition: all 0.1s ease-in;
+		background-color: $color-secondary;
+	}
+
+	&:visited {
+	    // color: #666;
+	    // border-color: #999;
+	}
+}
