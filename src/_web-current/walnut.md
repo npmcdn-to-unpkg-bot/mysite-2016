@@ -7,8 +7,11 @@ image-background: walnut-blur.jpg
 image-main: walnut.jpg
 images:
   - walnut.jpg
+  - weather_app.png
+  - kackt.png
 tools:
   - Vanilla JS
+  - SVG
 
 ---
 

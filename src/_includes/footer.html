@@ -15,7 +15,7 @@
             <div class="site-footer__col">
                 <ul class="social-media-list">
                     <li>
-                        <a href="https://twitter.com/{{ site.author.twitter }}">
+                        <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
                             <span class="icon icon--twitter">
                                 <svg viewBox="0 0 16 16">
                                   <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
@@ -29,6 +29,15 @@
                               </span>
 
                             <span class="username">{{ site.author.twitter }}</span>
+                        </a>
+                        <a href="https://github.com/FuruholmAnton" target="_blank" class="icon">
+                        	{% include icon-github.html %}
+                        </a>
+                        <a href="https://www.instagram.com/antonfuruholm/" target="_blank" class="icon">
+                        	{% include icon-instagram.html %}
+                        </a>
+                        <a href="https://www.linkedin.com/in/furuholm" target="_blank"class="icon">
+                        	{% include icon-linkedin.html %}
                         </a>
                     </li>
                 </ul>

@@ -8,7 +8,6 @@ image-background: weather_app-blur.jpg
 image-main: weather_app.jpg
 images: 
   - weather_app.png
-  - null
 tools:
   - backbone.js
   - Geolocation API

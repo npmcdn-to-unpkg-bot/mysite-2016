@@ -15,3 +15,5 @@ tools:
 ---
 
 Allmoge is a small certified ecologic farm. I visited the farm a couple of times and I love the atmosfear there. So I'm working on a design that I want to offer them.
+
+<!--more-->

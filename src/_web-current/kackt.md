@@ -5,6 +5,8 @@ date: 2015-03-01
 image-preview: kackt-preview.jpg
 image-background: kackt-blur.jpg
 image-main: kackt.png
+images:
+  - kackt.png
 tools:
   - Web components / Polymer
   - Firebase DB

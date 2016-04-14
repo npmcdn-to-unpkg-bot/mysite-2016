@@ -7,11 +7,12 @@ image-preview: flowstache-preview.jpg
 image-background: flowstache-blur.jpg
 image-main: flowstache.jpg
 images:
-  - null
+  - flowstache.jpg
 tools:
   - Mustache.js
   - Instagram API
 
 ---
 
-Me and [Mattias](//kaloja.se) and [Filip](//filiprundberg.se/)
+Me and <a class="link" href="//kaloja.se">Mattias</a> and <a class="link" href="//filiprundberg.se/">Filip</a>
+<!--more-->

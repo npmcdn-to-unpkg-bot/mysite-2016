@@ -7,7 +7,7 @@ image-preview: flickr-preview.jpg
 image-background: flickr-blur.jpg
 image-main: flickr.jpg
 images:
-  - null
+  - flickr.jpg
 tools:
   - JavaScript
   - Flickr API
@@ -15,3 +15,4 @@ tools:
 ---
 
 Flickr API
+<!--more-->

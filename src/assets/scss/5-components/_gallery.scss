@@ -1,5 +1,5 @@
 .gallery {
-
+	margin-top: 2rem;
 }
 
 .gallery-main {
@@ -25,9 +25,5 @@
 
 .gallery-item {
 	display: inline-block;
-	min-width: 200px;
 	height: 200px;
-
-	background-repeat: no-repeat;
-	background-size: cover;
 }

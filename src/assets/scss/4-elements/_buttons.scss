@@ -5,12 +5,12 @@
 	border-radius: 50px;
 	height: 2.5em;
 	line-height: 2.5em;
-
+	display: inline-block;
 
 
 	&:hover {
 		color: #fff;
-		border-color: #fff;
+		border-color: $color-secondary;
 		transition: all 0.1s ease-in;
 		background-color: $color-secondary;
 	}

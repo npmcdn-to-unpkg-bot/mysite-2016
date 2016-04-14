@@ -1,6 +1,15 @@
 /* Component: Navigation
 ============================================================================ */
 
+.site-logo__src {
+	opacity: 0.8;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+
 $nav-height: 150px;
 $nav-small: 60px;
 
@@ -8,12 +17,16 @@ $nav-small: 60px;
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    // border-top: 5px solid $grey-color-dark;
+    // border-bottom: 1px solid $grey-color-light;
+    // min-height: 56px;
 
     // Positioning context for the mobile navigation menu
-    position: relative;
+    // position: relative;
+    //
+    @media screen and (min-width: $lg) {
+    	padding: 0 20px;
+    }
 }
 
 .site-nav {
@@ -26,7 +39,7 @@ $nav-small: 60px;
 }
 
 .site-nav-mobile {
-    display: block;
+    display: none;
 
     @include media-query($sm) {
         display: none;
@@ -48,6 +61,8 @@ $nav-small: 60px;
     text-transform: uppercase;
     padding: 1em 0.5em;
     display: block;
+    font-weight: 300;
+    color: #fff;
 
     @include media-query($sm, $option: max) {
         width: 100%;
@@ -59,12 +74,13 @@ $nav-small: 60px;
     @include media-query($sm) {
         @extend .underline-from-center;
         display: inline-block;
+        color: #fff;
     }
 }
 
 .site-nav__explain {
     font-size: 0.8em;
-    color: #888;
+    color: #ededed;
     display: inline-block;
     height: 50px;
     line-height: 50px;
@@ -90,7 +106,7 @@ $nav-small: 60px;
         height: 15px;
 
         path {
-            fill: $grey-color-dark;
+            fill: #fff;
         }
     }
 

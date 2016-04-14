@@ -1,12 +1,25 @@
 
 (function subNav() {
 
-	var max_scroll = 50,
-		subnav = document.querySelector('.sub-nav');
+	window.addEventListener("resize", function () {
+		 calcStartPosition();
+	});
+
+	var max_scroll = 0,
+		subnav = document.querySelector(".sub-nav");
+
+	calcStartPosition();
+
 
 	if (document.querySelector('.sub-nav') instanceof HTMLElement) {
 	    window.addEventListener('scroll', onScroll);
+	}
 
+	function calcStartPosition() {
+		var body = document.body.getBoundingClientRect(),
+		    elemRect = subnav.getBoundingClientRect(),
+		    offset   = elemRect.top - body.top;
+		    max_scroll = offset;
 	}
 
 	function fixNav() {

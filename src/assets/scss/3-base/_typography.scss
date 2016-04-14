@@ -16,6 +16,10 @@ h6 {
 .heading {
     padding: 0.2em 0 0.5em 0;
 }
+.heading-bold {
+	font-weight: 500;
+	@extend .heading;
+}
 
 
 p {
@@ -41,6 +45,8 @@ a {
 .link {
     color: $color-link;
     position: relative;
+    font-family: $font-copy;
+    line-height: 1.6;
     z-index: 0;
     @include underline-from-center();
 
