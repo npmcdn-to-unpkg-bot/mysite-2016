@@ -14,5 +14,5 @@ tools:
 
 ---
 
-Flickr API
+Flickr Grid
 <!--more-->

@@ -1,3 +1,4 @@
+if(document.querySelector(".sub-nav") instanceof HTMLElement) {
 
 (function subNav() {
 
@@ -89,4 +90,5 @@
 
 })();
 
+}
 

@@ -9,9 +9,6 @@
     z-index: 2;
     position: relative;
 
-	&::-webkit-scrollbar {
-		display: none;
-	}
 
 	@media screen and (max-width: 400px) {
 		&::after {
@@ -25,10 +22,16 @@
 		}
 	}
 
-	ul {
+	> ul {
 		padding: 0;
 		white-space: nowrap;
-    overflow: auto;
+    	overflow-x: auto;
+	    overflow-y: hidden;
+	    text-align: center;
+
+	    &::-webkit-scrollbar {
+	    	display: none;
+	    }
 	}
 }
 
