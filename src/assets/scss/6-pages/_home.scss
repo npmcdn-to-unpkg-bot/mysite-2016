@@ -1,0 +1,116 @@
+/* Component: Home
+============================================================================ */
+
+
+
+.home-section__number {
+	text-align: left;
+	background-color: #444;
+	padding: 1em 0;
+
+	div {
+		color: #aaa;
+	}
+}
+.home-section__border {
+	height: 1px;
+	width: 100px;
+	display: inline-block;
+	background-color: #bbb;
+	margin-top: 1rem;
+}
+
+.home-sandbox {
+	background-color: $color-background;
+}
+.home-blog__content {
+
+	@include col(1);
+	float: left;
+
+	@include media-query($sm) {
+		@include col(1);
+	}
+}
+
+.home-about {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #F7F7F7;
+	@extend %clearfix;
+	position: relative;
+
+	&__part {
+
+		@include col(1);
+		float: left;
+
+		@include media-query($sm) {
+			// @include col(2);
+		};
+
+		&--image {
+
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			@media screen and (max-width: $md) {
+				@include aspect-ratio(16,9);
+
+			}
+
+			// @include media-query($sm) {
+			//     width: 50%;
+			// };
+			@include media-query($md) {
+				width: 60%;
+			};
+		}
+
+		&--text {
+
+			// @include media-query($sm) {
+			//     width: 50%;
+			// };
+			// text-align: center;
+			@include media-query($md) {
+				width: 40%;
+			};
+		}
+	}
+
+	&__content {
+		padding: 60px 20px;
+		@include media-query($md) {
+			max-width: 450px;
+			padding: 80px 30px;
+			float: right;
+		};
+	}
+
+	&__link {
+		margin-top: 1em;
+	}
+}
+
+.home-phone {
+	font-family: 'Playfair Display', serif;
+	font-size: 30px;
+	padding: 2em 0;
+	text-align: center;
+	background-color: $color-background;
+
+	@include media-query($sm) {
+		font-size: 40px;
+	}
+
+	a {
+		color: #969696;
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			color: #222;
+		}
+	}
+}

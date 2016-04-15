@@ -1,0 +1,74 @@
+/* Component: Sub Navigation
+============================================================================ */
+
+.sub-nav {
+
+
+    background-color: #fff;
+	@include box-shadow();
+    z-index: 2;
+    position: relative;
+
+
+	@media screen and (max-width: 400px) {
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 20px;
+			background: linear-gradient(to left, rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 90%);
+		}
+	}
+
+	> ul {
+		padding: 0;
+		white-space: nowrap;
+    	overflow-x: auto;
+	    overflow-y: hidden;
+	    text-align: center;
+
+	    &::-webkit-scrollbar {
+	    	display: none;
+	    }
+	}
+}
+
+.sub-nav__item {
+	@include col(4);
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-family: $font-copy;
+	// text-transform: uppercase;
+	min-width: 122px;
+
+	a {
+		display: block;
+		padding: 1em 10px;
+		color: #666;
+		font-size: 0.8em;
+
+		@include media-query($sm) {
+		   font-size: 0.9em;
+		}
+	}
+
+	&:hover {
+		background-color: $color-secondary;
+		a {
+			color: #fff;
+		}
+
+	}
+}
+
+.subNavFixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    @include box-shadow();
+}

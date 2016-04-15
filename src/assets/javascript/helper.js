@@ -6,16 +6,16 @@ if (typeof Array.prototype.indexOf !== 'function') {
             }
         }
         return -1;
-    }; 
+    };
 }
 
 window._ = (function () {
-  
+
     function aquery(elems) {
       for(var i = 0; i < elems.length; i++ ) {
         this[i] = elems[i];
       }
-      this.length = elems.length;   
+      this.length = elems.length;
     }
 
     aquery.prototype = {
@@ -28,7 +28,7 @@ window._ = (function () {
       },
       forEach: function (callback) {
           this.map(callback);
-          return this; 
+          return this;
       },
       addEvent: function(evnt, func) {
         if (document.addEventListener) {
@@ -59,7 +59,7 @@ window._ = (function () {
           }
       }
     }
-     
+
     var _ = {
         get: function (selector) {
           var elems;
@@ -71,8 +71,8 @@ window._ = (function () {
               elems = [selector];
           }
           return new aquery(elems);
-        }   
+        }
     };
-     
+
     return _;
 }());

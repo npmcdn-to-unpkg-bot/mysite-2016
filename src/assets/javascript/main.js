@@ -1,26 +1,49 @@
+// function onScroll (evt) {
 
-(function gallery(){
+//   // Store the scroll value for laterz.
+//   var lastScrollY = window.scrollY;
 
-    function getFlickr() {
+//   // Prevent multiple rAF callbacks.
+//   if (scheduledAnimationFrame) {
+//     return;
+//   }
+
+//   var scheduledAnimationFrame = true;
+//   requestAnimationFrame(evt);
+// }
+
+(function gallery() {
+
+    function getFlickrImages() {
+
+    }
+
+    function get500pxImages() {
 
     }
 
 })();
 
+(function check_if_user_has_visited_before() {
 
-(function visited() {
+	var start = _.get('.startscreen')[0];
+	if (start instanceof HTMLElement) {
+		if (typeof(Storage) !== 'undefined') {
 
-    if(typeof(Storage) !== "undefined") {
+		    if (localStorage.hasVisitedBefore) {
 
-        if(localStorage.hasVisitedBefore) {
-            var start = _(".startscreen");
-            start.style.display = none;
-        } else {
-            localStorage.hasVisitedBefore = true;
-        }
+		        start.style.display = 'none';
 
-    } else {
-        // Sorry! No Web Storage support..
-    }
+		    } else {
+		        localStorage.hasVisitedBefore = true;
+
+		    }
+
+		} else {
+		    // Sorry! No Web Storage support..
+		}
+	}
+
+
 
 })();
