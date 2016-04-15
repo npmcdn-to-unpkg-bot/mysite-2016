@@ -9,12 +9,12 @@ image-main: weather_app.jpg
 images: 
   - weather_app.png
 tools:
-  - backbone.js
+  - Backbone.js
   - Geolocation API
 
 ---
 
-This is a simple weather site that shows you the current weather and 2 days ahead. It's made for people in a hurry that don't want to search through a lot of information to find the essential ones.
+This is a simple weather site that shows you the current weather and 2 days ahead. It's made for people in a hurry that don't want to scan through a lot of information to find the essential.
 
 <!--more-->
 I made this weather web app as a school project when I studied in Canberra, Australia.

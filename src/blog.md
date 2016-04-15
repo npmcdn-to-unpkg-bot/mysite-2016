@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 ---
 
-<div class="blog wrapper-sm mt3">
+<div class="blog wrapper-sm sub-page">
   <h1 class="page-heading">Blog Posts</h1>
   <div class="page-border"></div>
 

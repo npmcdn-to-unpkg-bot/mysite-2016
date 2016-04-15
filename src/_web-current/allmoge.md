@@ -9,11 +9,10 @@ image-main: allmoge.jpg
 images:
   - allmoge.jpg
 tools:
-  - Mustache.js
-  - Instagram API
+  - Design only
 
 ---
 
-Allmoge is a small certified ecologic farm. I visited the farm a couple of times and I love the atmosfear there. So I'm working on a design that I want to offer them.
+Allmoge is a small certified ecologic farm. I visited the farm a couple of times and I really liked the place. So I started working on a design just for fun.
 
 <!--more-->

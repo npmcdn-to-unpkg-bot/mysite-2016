@@ -20,7 +20,7 @@ var turtle = (function() {
 			 */
 			var style = document.createElement('style');
 			style.type = 'text/css';
-			style.innerHTML = '.turtlejs-item { margin-left: 4px; height: 300px; }';
+			style.innerHTML = '.turtlejs-item { margin-left: 4px; height: 400px; }';
 			document.getElementsByTagName('head')[0].appendChild(style);
 
 			// container.innerHTML.replace(/\n/g, "");

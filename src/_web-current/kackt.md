@@ -13,7 +13,7 @@ tools:
 
 ---
 
-Kackt is a web app that is made for people who want's control over who is comming to their event and who is already there.
+Kackt is a web app that is made for people who want's control over who is coming to their event and who is already checked in.
 
 <!--more-->
 

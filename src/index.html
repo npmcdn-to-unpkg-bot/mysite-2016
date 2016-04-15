@@ -2,6 +2,7 @@
 layout: default
 regenerate: true
 aboutImage: /assets/images/profile.jpg
+classes: page-home
 ---
 
 <div class="startscreen">
@@ -20,12 +21,12 @@ aboutImage: /assets/images/profile.jpg
 
 
 	<section class="home-intro" style="background-image: url(/assets/images/background-1.jpg);">
-		<!-- <div class="wrapper-md home-intro__content"> -->
-			<!-- <h1 class="home-intro__title heading">Anton Furuholm</h1> -->
+		<div class="wrapper-md home-intro__content">
+			<h1 class="home-intro__title heading">Anton Furuholm</h1>
 			<h2 class="home-intro__text">Web Developer<br>
 			Photographer<br>
 			Fitness Enthusiast</h2>
-		<!-- </div> -->
+		</div>
 	</section>
 
 	<div style="height: 47px">
@@ -33,7 +34,7 @@ aboutImage: /assets/images/profile.jpg
 			<ul class="wrapper wrapper-no-padding">
 				<li class="sub-nav__item"><a href="#sandbox">Playground</a>
 				<li class="sub-nav__item"><a href="#liveProjects">Live Project</a>
-				<li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a>
+				<!-- <li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a> -->
 				<li class="sub-nav__item"><a href="#about">Short About Me</a>
 			</ul>
 		</nav>
@@ -69,9 +70,12 @@ aboutImage: /assets/images/profile.jpg
 							<h2 class="box__title heading">
 							  {{ project.title }}
 							</h2>
-							{% for tool in project.tools %}
-								<span class="box-tool">{{ tool }}</span>
-							{% endfor %}
+							<div class="box-tools">
+								{% for tool in project.tools %}
+									<span class="box-tool">{{ tool }}</span>
+								{% endfor %}
+							</div>
+
 							<p class="box__copy">
 								{{ project.excerpt | remove: '<p>' | remove: '</p>' }}
 							</p>
@@ -105,13 +109,18 @@ aboutImage: /assets/images/profile.jpg
 					{% assign projects = site.web-live | sort='date, title' %}
 					{% for project in projects reversed %}
 					<li class="box__item">
-						<div class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
-						</div>
+						<a href="{{ site.url }}{{ project.url }}" class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
+						</a>
 						<div class="box__content">
 							<div class="box-text">
 								<h2 class="box__title">
 								  {{ project.title }}
 								</h2>
+								<div class="box-tools">
+									{% for tool in project.tools %}
+										<span class="box-tool">{{ tool }}</span>
+									{% endfor %}
+								</div>
 								<div class="box__copy">
 									{{ project.excerpt }}
 									<p></p>
@@ -126,14 +135,12 @@ aboutImage: /assets/images/profile.jpg
 
 		<div class="home-background"></div>
 
-		{% if site.posts %}
+		<!-- {% if site.posts %}
 		<section class="home-blog home-section">
 			<div class="anchor" id="blog"></div>
 			<div class="wrapper-md">
 				<div class="home-section__header">
 					<div class="wrapper-md home-heading__inner">
-						<!-- <div class="home-number">3</div> -->
-						<!-- <p class="home-order">3</p> -->
 						<h2 class="home-heading heading">
 							Blog
 						</h2>
@@ -147,9 +154,6 @@ aboutImage: /assets/images/profile.jpg
 					<div class="box__item--inner box__item--blog mb3">
 						<h3 class="heading">{{ post.title }}</h3>
 						<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-						<!-- <div class="box__image">
-							<img src="{{ site.url }}{{ post.image }}" alt="">
-						</div> -->
 
 						{{ post.excerpt }}
 					</div>
@@ -158,7 +162,7 @@ aboutImage: /assets/images/profile.jpg
 				</div>
 			</div>
 		</section>
-		{% endif %}
+		{% endif %} -->
 
 		<section class="home-about">
 			<div class="anchor" id="about"></div>
