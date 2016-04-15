@@ -1,8 +1,10 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: Furuholm
-description: Site for myself
-url: http://localhost:3000
+description: '© Anton Furuholm'
+url: http://localhost:1337
+# url: furuholmanton.github.io
+# url: https://furuholm.se
 logo: /assets/images/logo-black.svg
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
@@ -21,13 +23,13 @@ defaults:
 
   - scope:
       path: ''
-      type: 'web-personal'
+      type: 'web-current'
     values:
       layout: 'project'
 
   - scope:
       path: ''
-      type: 'web-business'
+      type: 'web-live'
     values:
       layout: 'project'
 
@@ -90,12 +92,12 @@ jekyll-archives:
     tags: '/tag/:name/'
 
 collections:
-  web-personal:
+  web-current:
     output: true
     layout: project
-    permalink: /personal/:path/
+    permalink: /current/:path/
 
-  web-business:
+  web-live:
     output: true
     layout: project
     permalink: /live/:path/

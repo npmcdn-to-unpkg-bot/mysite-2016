@@ -1,0 +1,100 @@
+%gutter {
+    margin: {
+        right: $gutter;
+        left: $gutter;
+        bottom: $gutter*2;
+    }
+}
+/**
+ * If you want 5 colums to fit then write 5.
+ *
+ * @param  {[number]}
+ * @return {[procent]}
+ * ex. width: col(5);
+ */
+// @function col($size) {
+
+//     @return 100%/#{$size};
+// }
+@function col($piece, $pie:false) {
+
+    @if type-of($piece) == 'number' and $pie == false {
+        @return 100%/$piece;
+
+    } @else if type-of($piece) == 'number' and type-of($pie) == 'number' {
+
+        @return $piece/$pie * 100%;
+    }
+}
+
+@mixin col($piece:1, $pie:false) {
+
+    @if type-of($piece) == 'number' and $pie == false {
+       width: calc(100%/#{$piece});
+
+    } @else if type-of($piece) == 'number' and type-of($pie) == 'number' {
+
+        width: calc(#{$piece} / #{$pie} * 100%);
+    }
+}
+
+
+
+.col {
+  float: left;
+  box-sizing: border-box;
+}
+
+.col-right {
+  float: right;
+  box-sizing: border-box;
+}
+
+.col-container {
+    margin: {
+        right: -$gutter;
+        left: -$gutter;
+    }
+    text-align: center;
+}
+
+// [class*='col-'] {
+//   float: left;
+// }
+
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        @extend %gutter;
+        &:last-of-type {
+            margin-bottom: 0px;
+        }
+        width: calc((#{$i}/12 * 100%) - (#{$gutter} * 2));
+    }
+}
+// Creates colums for every size and width
+@each $name, $size in $sizes {
+
+    @media (min-width: $size) {
+        .#{$name}-col {
+          float: left;
+          box-sizing: border-box;
+        }
+
+        .#{$name}-col-right {
+          float: right;
+          box-sizing: border-box;
+        }
+
+        @for $i from 1 through 12 {
+            .#{$name}-col-#{$i} {
+                @extend %gutter;
+                &:last-of-type {
+                    margin-bottom: 0px;
+                }
+                width: calc((#{$i}/12 * 100%) - (#{$gutter} * 2));
+            }
+        }
+    }
+}
+

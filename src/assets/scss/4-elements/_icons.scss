@@ -1,0 +1,30 @@
+/**
+ * Icons
+ */
+.icon {
+
+	& + & {
+		margin-left: 6px;
+	}
+
+    > svg {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        vertical-align: middle;
+
+
+
+        path {
+            fill: #c7c7c7;
+			transition: fill 0.5s linear;
+
+        }
+    }
+
+    &:hover {
+    	path {
+    		fill: #444;
+    	}
+    }
+}

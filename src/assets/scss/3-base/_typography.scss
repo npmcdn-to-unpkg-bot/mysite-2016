@@ -1,0 +1,64 @@
+/* Base: Typography
+============================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    font-family: $font-main;
+    font-weight: 300;
+}
+
+.heading {
+    padding: 0.2em 0 0.5em 0;
+}
+.heading-bold {
+	font-weight: 500;
+	@extend .heading;
+}
+
+
+p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: $color-text;
+    font-family: $font-copy;
+
+    & + & {
+        margin-top: 1em;
+    }
+}
+
+/**
+ * Links
+ */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.link {
+    color: $color-link;
+    position: relative;
+    font-family: $font-copy;
+    line-height: 1.6;
+    z-index: 0;
+    @include underline-from-center();
+
+    &:visited {
+        color: lighten($color-link, 15%);
+    }
+
+    &:hover {
+        color: darken($color-link, 15%);
+
+
+    }
+
+}
+
