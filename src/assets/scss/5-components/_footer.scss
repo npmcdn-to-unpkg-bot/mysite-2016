@@ -1,0 +1,61 @@
+/* Component: Footer
+============================================================================ */
+
+.site-footer {
+    background-color: #fff;
+    border-top: 2px solid #ccc;
+
+    // position: absolute;
+    // bottom: 0;
+    width: 100%;
+    // background-image: url(/assets/images/grey_wall.png);
+}
+
+.site-footer__col-wrapper {
+    font-size: 15px;
+    color: #aaa;
+    padding: 1em 0;
+    @extend %clearfix;
+}
+
+.site-footer__col {
+
+    @include col(1);
+    text-align: center;
+    padding: 0.5rem 0;
+
+    @include media-query($sm) {
+        @include col(3);
+        float: left;
+        text-align: left;
+
+        &:nth-of-type(3) {
+            text-align: right;
+        }
+    }
+
+    &:nth-of-type(2) {
+        text-align: center;
+    }
+
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+    // border-top: 1px solid $grey-color-light;
+    // padding: $spacing-unit 0;
+}
+
+.footer-heading {
+    font-size: 18px;
+    // margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+

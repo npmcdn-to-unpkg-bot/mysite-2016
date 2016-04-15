@@ -1,0 +1,43 @@
+//  Config: Mixins
+// ============================================================================
+
+
+// Aspect ratio: Resize background with set ratio
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+}
+
+// Element align: Vertical center element
+@mixin element-align($position: relative) {
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+/**
+ * @param  {[type]}
+ * @param  {[type]}
+ * @param  {[type]}
+ * @param  {[type]}
+ * @return {[type]}
+ */
+
+
+@function contains(/* List */ $haystack, /* Any */ $needle) {
+  @return not not index($haystack, $needle);
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

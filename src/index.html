@@ -1,0 +1,188 @@
+---
+layout: default
+regenerate: true
+aboutImage: /assets/images/profile.jpg
+classes: page-home
+---
+
+<div class="startscreen">
+	<div class="startscreen-content">
+		<h2 class="startscreen-heading startscreen-heading--main">Anton Furuholm</h2>
+		<h3 class="startscreen-heading startscreen-heading--sub">
+			Web developer<br>
+			Photographer<br>
+			Fitness Enthusiast
+		</h3>
+	</div>
+</div>
+
+<div class="home">
+
+
+
+	<section class="home-intro" style="background-image: url(/assets/images/background-1.jpg);">
+		<div class="wrapper-md home-intro__content">
+			<h1 class="home-intro__title heading">Anton Furuholm</h1>
+			<h2 class="home-intro__text">Web Developer<br>
+			Photographer<br>
+			Fitness Enthusiast</h2>
+		</div>
+	</section>
+
+	<div style="height: 47px">
+		<nav class="sub-nav">
+			<ul class="wrapper wrapper-no-padding">
+				<li class="sub-nav__item"><a href="#sandbox">Playground</a>
+				<li class="sub-nav__item"><a href="#liveProjects">Live Project</a>
+				<!-- <li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a> -->
+				<li class="sub-nav__item"><a href="#about">Short About Me</a>
+			</ul>
+		</nav>
+	</div>
+
+	<section class="home-sandbox home-section pb4">
+		<div class="anchor" id="sandbox"></div>
+
+		<header class="home-section__header">
+			<div class="wrapper-md home-heading__inner">
+
+				<!-- <div class="home-number">1</div> -->
+				<!-- <p class="home-order">1</p> -->
+
+				<h2 class="home-heading heading">
+					Current web Projects
+				</h2>
+				<p>These are web projects I'm working on.</p>
+				<p class="home-section__border"></p>
+			</div>
+		</header>
+
+		<div class="wrapper-md">
+
+			<ul class="box__container mxn2">
+				{% assign projects = site.web-current | sort='date, title' %}
+				{% for project in projects reversed %}
+				<li class="box__item">
+					<a href="{{ site.url }}{{ project.url }}" class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
+					</a>
+					<div class="box__content">
+						<div class="box-text">
+							<h2 class="box__title heading">
+							  {{ project.title }}
+							</h2>
+							<div class="box-tools">
+								{% for tool in project.tools %}
+									<span class="box-tool">{{ tool }}</span>
+								{% endfor %}
+							</div>
+
+							<p class="box__copy">
+								{{ project.excerpt | remove: '<p>' | remove: '</p>' }}
+							</p>
+							<a href="{{ site.url }}{{ project.url }}" class="box-readmore">Read more</a>
+						</div>
+					</div>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+
+	<div class="home-background"></div>
+
+	<div id="postRender">
+		<section class="home-live home-section">
+			<div class="anchor" id="liveProjects"></div>
+			<div class="wrapper-md ">
+				<div class="home-section__header">
+					<div class="home-heading__inner">
+						<!-- <div class="home-number">2</div> -->
+						<!-- <p class="home-order">2</p> -->
+						<h2 class="home-heading heading">
+							Live web Project
+						</h2>
+						<p>These are projects I have delivered or are ready for public use.</p>
+						<p class="home-section__border"></p>
+					</div>
+				</div>
+
+				<ul class="box__container">
+					{% assign projects = site.web-live | sort='date, title' %}
+					{% for project in projects reversed %}
+					<li class="box__item">
+						<a href="{{ site.url }}{{ project.url }}" class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
+						</a>
+						<div class="box__content">
+							<div class="box-text">
+								<h2 class="box__title">
+								  {{ project.title }}
+								</h2>
+								<div class="box-tools">
+									{% for tool in project.tools %}
+										<span class="box-tool">{{ tool }}</span>
+									{% endfor %}
+								</div>
+								<div class="box__copy">
+									{{ project.excerpt }}
+									<p></p>
+								</div>
+								<a href="{{ site.url }}{{ project.url }}" class="box-readmore">Read more</a>
+							</div>
+						</div>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+
+		<div class="home-background"></div>
+
+		<!-- {% if site.posts %}
+		<section class="home-blog home-section">
+			<div class="anchor" id="blog"></div>
+			<div class="wrapper-md">
+				<div class="home-section__header">
+					<div class="wrapper-md home-heading__inner">
+						<h2 class="home-heading heading">
+							Blog
+						</h2>
+						<p>My most recent posts about the web.</p>
+						<p class="home-section__border"></p>
+					</div>
+				</div>
+				<div class="home-blog__content">
+					{% assign posts = site.posts | sort='date, title' %}
+					{% for post in posts reversed %}
+					<div class="box__item--inner box__item--blog mb3">
+						<h3 class="heading">{{ post.title }}</h3>
+						<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+						{{ post.excerpt }}
+					</div>
+					{% endfor %}
+					<a href="#" class="button-round">Read more</a>
+				</div>
+			</div>
+		</section>
+		{% endif %} -->
+
+		<section class="home-about">
+			<div class="anchor" id="about"></div>
+			<div class="home-about__part home-about__part--text">
+				<div class="home-about__content">
+					<h2 class="heading">Hello!</h2>
+					<p>I'm a Swedish front-end web developer. My main areas of expertise are JavaScript, PHP and CSS.
+					</p>
+					<p>
+					I studied web development and graphic design for 2 years in Sweden and exclusively web development for one semester in Canberra, Australia. <br>
+					I'm currently working at a agency called <a href="//grandpublic.se" target="_blanck" class="link">Grand Public</a>
+					</p>
+					<p></p>
+					<a href="/about" class="home-about__link button-round">Read more</a>
+				</div>
+			</div>
+			<div class="home-about__part home-about__part--image" style="background-image: url({{ site.url }}{{ page.aboutImage }})">
+			</div>
+		</section>
+
+		<h2 class="home-phone"><a href="tel:'+4673-072 92 79">+46 730 72 92 79</a></h2>
+	</div>
+</div>
