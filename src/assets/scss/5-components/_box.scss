@@ -11,11 +11,7 @@ $box-image-width: 180px;
 	vertical-align: top;
 	@include col(2);
 	padding: 0 2px;
-
-	&:nth-of-type(1n+3) {
-		margin-top: 4px;
-	}
-
+	margin-bottom: 4px;
 
 	@include media-query($xs) {
 		@include col(3);
@@ -29,7 +25,7 @@ $box-image-width: 180px;
 	};
 
 	@include media-query($sm) {
-		padding: 3em;
+		padding: 2.5rem 3rem;
 		border-bottom: 1px solid #eee;
 		@include col(1);
 
@@ -42,6 +38,22 @@ $box-image-width: 180px;
 		}
 	};
 }
+
+
+.box-mobile__content {
+	display: none;
+	@media screen and (max-width: 600px) {
+		display: none;
+		float: left;
+		width: 100%;
+		padding: 1rem;
+
+		.box__item--open + & {
+			display: block;
+		}
+	}
+}
+
 
 
 .box__image {
@@ -64,6 +76,9 @@ $box-image-width: 180px;
 .box__container {
 	// display: flex;
 	// flex-wrap: wrap;
+	// &:nth-child(1n+2) {
+	// 	margin-top: 4px;
+	// }
 }
 
 .box__content {
@@ -114,7 +129,7 @@ $box-image-width: 180px;
 .box__title {
 	display: block;
 	word-wrap: break-word;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	font-weight: 300;
 
 	@include media-query($sm) {
@@ -139,19 +154,17 @@ $box-image-width: 180px;
 }
 
 .box-text {
-	@include media-query($sm, $option:max) {
-		@include position();
-		width: 100%;
-		text-shadow: 0 1px 1px #000;
-		display: none;
-	}
+	// @include media-query($sm, $option:max) {
+	// 	@include position();
+	// 	width: 100%;
+	// 	text-shadow: 0 1px 1px #000;
+	// 	display: none;
+	// }
 
 }
 
 .box__copy {
-	// font-size: 1rem;
 	padding-top: 0.5em;
-	display: none;
 	font-size: 1.1em;
 
 	@include media-query($sm) {
@@ -162,32 +175,34 @@ $box-image-width: 180px;
 .box-readmore {
 
 	font-size: 0.8em;
+	color: #666;
+	float: right;
+	margin-top: 1.5em;
+	@extend .button-round;
 
-	@include media-query($sm, $option:max) {
-		color: #fff;
-		border: none;
-		background: none;
+	// @include media-query($sm, $option:max) {
+	// 	color: #fff;
+	// 	border: none;
+	// 	background: none;
 
-		&:hover {
-			background: none;
-		}
+	// 	&:hover {
+	// 		background: none;
+	// 	}
 
-		&:visited {
-			color: #fff;
-		}
-	}
+	// 	&:visited {
+	// 		color: #fff;
+	// 	}
+	// }
 
 	@include media-query($sm) {
-		color: #666;
-		float: right;
-		margin-top: 1.5em;
+
 		font-size: 0.9em;
 
 		&:hover {
 
 		}
 
-		@extend .button-round;
+
 
 	}
 

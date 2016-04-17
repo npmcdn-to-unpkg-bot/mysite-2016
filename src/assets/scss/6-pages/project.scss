@@ -68,10 +68,12 @@
 			}
 		}
 	}
+}
+.project__info {
+	padding: 14px;
+	min-height: 200px;
 
-	&__info {
-		padding: 14px;
-		min-height: 200px;
+	@media screen and (min-width: $sm) {
 		border-left: 1px solid #eee;
 	}
 }
@@ -79,4 +81,16 @@
 .aside-item {
 	line-height: 1.6;
 	font-weight: 300;
+	padding: 0.3em 0em;
+	color: #555;
+	font-size: 1rem;
+
+
+	margin-bottom: 4px;
+
+	@media screen and (max-width: $sm) {
+		display: inline-block;
+		border-left: 1px solid #ccc;
+		padding: 0.3em 0.6em;
+	}
 }

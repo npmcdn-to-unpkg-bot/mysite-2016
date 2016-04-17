@@ -1,0 +1,32 @@
+<li class="box__item">
+	<a href="{{ project.url }}" class="box__image" style="background-image: url(/assets/images/{{ project.image-preview }});">
+	</a>
+	<div class="box__content">
+		<div class="box-text">
+			<h2 class="box__title heading">
+			  {{ project.title }}
+			</h2>
+			<div class="box-tools">
+				{% for tool in project.tools %}
+					<span class="box-tool">{{ tool }}</span>
+				{% endfor %}
+			</div>
+
+			<p class="box__copy">
+				{{ project.excerpt | remove: '<p>' | remove: '</p>' }}
+			</p>
+			<a href="{{ project.url }}" class="box-readmore">Read more</a>
+		</div>
+	</div></li><li class="box-mobile__content">
+			<h2 class="box__title">
+				{{ project.title }}
+			</h2>
+			<div class="box-tools">
+				{% for tool in project.tools %}
+					<span class="box-tool">{{ tool }}</span>
+				{% endfor %}
+			</div>
+			<p class="box__copy">
+				{{ project.excerpt | remove: '<p>' | remove: '</p>' }}
+			</p>
+			<a href="{{ project.url }}" class="box-readmore">Read more</a>

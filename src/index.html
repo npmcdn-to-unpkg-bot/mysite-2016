@@ -21,21 +21,26 @@ classes: page-home
 
 
 	<section class="home-intro" style="background-image: url(/assets/images/background-1.jpg);">
-		<div class="wrapper-md home-intro__content">
+		<div class="home-intro__content">
 			<h1 class="home-intro__title heading">Anton Furuholm</h1>
 			<h2 class="home-intro__text">Web Developer<br>
 			Photographer<br>
 			Fitness Enthusiast</h2>
 		</div>
+		<a href="#sandbox" class="home-intro__arrow-down anchor-link">
+			<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4">
+				<path fill="#fff" d="M400.7 623L49 308l16-17.8 335.7 300.3L742 285l16 18-357.3 320z"/>
+			</svg>
+		</a>
 	</section>
 
 	<div style="height: 47px">
 		<nav class="sub-nav">
 			<ul class="wrapper wrapper-no-padding">
-				<li class="sub-nav__item"><a href="#sandbox">Playground</a>
-				<li class="sub-nav__item"><a href="#liveProjects">Live Project</a>
+				<li class="sub-nav__item"><a class="anchor-link" href="#sandbox">Current projects</a>
+				<li class="sub-nav__item"><a class="anchor-link" href="#liveProjects">Live Project</a>
 				<!-- <li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a> -->
-				<li class="sub-nav__item"><a href="#about">Short About Me</a>
+				<li class="sub-nav__item"><a class="anchor-link" href="#about">Short About Me</a>
 			</ul>
 		</nav>
 	</div>
@@ -45,9 +50,6 @@ classes: page-home
 
 		<header class="home-section__header">
 			<div class="wrapper-md home-heading__inner">
-
-				<!-- <div class="home-number">1</div> -->
-				<!-- <p class="home-order">1</p> -->
 
 				<h2 class="home-heading heading">
 					Current web Projects
@@ -62,26 +64,7 @@ classes: page-home
 			<ul class="box__container mxn2">
 				{% assign projects = site.web-current | sort='date, title' %}
 				{% for project in projects reversed %}
-				<li class="box__item">
-					<a href="{{ site.url }}{{ project.url }}" class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
-					</a>
-					<div class="box__content">
-						<div class="box-text">
-							<h2 class="box__title heading">
-							  {{ project.title }}
-							</h2>
-							<div class="box-tools">
-								{% for tool in project.tools %}
-									<span class="box-tool">{{ tool }}</span>
-								{% endfor %}
-							</div>
-
-							<p class="box__copy">
-								{{ project.excerpt | remove: '<p>' | remove: '</p>' }}
-							</p>
-							<a href="{{ site.url }}{{ project.url }}" class="box-readmore">Read more</a>
-						</div>
-					</div>
+					{% include box.html %}
 				{% endfor %}
 			</ul>
 		</div>
@@ -95,8 +78,6 @@ classes: page-home
 			<div class="wrapper-md ">
 				<div class="home-section__header">
 					<div class="home-heading__inner">
-						<!-- <div class="home-number">2</div> -->
-						<!-- <p class="home-order">2</p> -->
 						<h2 class="home-heading heading">
 							Live web Project
 						</h2>
@@ -108,26 +89,7 @@ classes: page-home
 				<ul class="box__container">
 					{% assign projects = site.web-live | sort='date, title' %}
 					{% for project in projects reversed %}
-					<li class="box__item">
-						<a href="{{ site.url }}{{ project.url }}" class="box__image" style="background-image: url({{ site.url }}/assets/images/{{ project.image-preview }});">
-						</a>
-						<div class="box__content">
-							<div class="box-text">
-								<h2 class="box__title">
-								  {{ project.title }}
-								</h2>
-								<div class="box-tools">
-									{% for tool in project.tools %}
-										<span class="box-tool">{{ tool }}</span>
-									{% endfor %}
-								</div>
-								<div class="box__copy">
-									{{ project.excerpt }}
-									<p></p>
-								</div>
-								<a href="{{ site.url }}{{ project.url }}" class="box-readmore">Read more</a>
-							</div>
-						</div>
+						{% include box.html %}
 					{% endfor %}
 				</ul>
 			</div>
@@ -179,10 +141,10 @@ classes: page-home
 					<a href="/about" class="home-about__link button-round">Read more</a>
 				</div>
 			</div>
-			<div class="home-about__part home-about__part--image" style="background-image: url({{ site.url }}{{ page.aboutImage }})">
+			<div class="home-about__part home-about__part--image" style="background-image: url(/}{{ page.aboutImage }})">
 			</div>
 		</section>
 
-		<h2 class="home-phone"><a href="tel:'+4673-072 92 79">+46 730 72 92 79</a></h2>
+		<h2 class="home-phone"><a href="tel:+4673-072 92 79">+46 730 72 92 79</a></h2>
 	</div>
 </div>

@@ -1,7 +1,28 @@
 /* Component: Home
 ============================================================================ */
 
+.home-background {
+    height: 200px;
+    background-image: url('/assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 
+    // Optimization
+    will-change: transform;
+    transform: translateY(0);
+
+    &::after {
+    	content: '';
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	// background: rgba($color-main, 0.5);
+    	background: rgba(#4bbf6b, 0.6);
+    }
+}
 
 .home-section__number {
 	text-align: left;

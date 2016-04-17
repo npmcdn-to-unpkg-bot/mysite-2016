@@ -65,6 +65,7 @@ $nav-small: 60px;
 	left: 0;
 	width: 100%;
 	z-index: 8;
+	transition: all 0.5s ease;
 
 	&--active & {
 		transform: translateY(0);

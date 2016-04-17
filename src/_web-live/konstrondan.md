@@ -12,6 +12,6 @@ tools:
 
 ---
 
-Konstrondan is a wordpress powered site build I built from the ground up. 
+Konstrondan is a wordpress powered site, for this site I built a unique theme from the ground up. This is the way I prefer to build WP-themes. 
 <!--more-->
 Konstrondan is a site for creative art people in living in Småland, Sweden.

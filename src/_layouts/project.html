@@ -24,7 +24,7 @@ layout: default
             <ul class="aside-list">
                 <h3 class="heading-bold">Tools</h3>
                 {% for tool in page.tools %}
-                    <li class="aside-item">- {{ tool }}</li>
+                    <li class="aside-item">{{ tool }}</li>
                 {% endfor %}
             </ul>
         </aside>
@@ -37,7 +37,7 @@ layout: default
         	<div class="gallery-list turtlejs" walnut>
         		{% for image in page.images %}
 	                <!-- <div class="gallery-item" style="background-image: url({{ site.url }}/assets/images/{{ image }});"></div> -->
-	                <img class="gallery-item" src="{{ site.url }}/assets/images/{{ image }}" alt="">
+	                <img class="gallery-item" src="/assets/images/{{ image }}" alt="" walnut-image>
 	            {% endfor %}
         	</div>
         </section>
@@ -50,5 +50,4 @@ layout: default
 		 turtle.init();
 	});
 </script>
-<!-- <script type="text/javascript" src="/assets/javascript/turtleJS.js"></script> -->
-<script type="text/javascript" walnut-script src="{{ site.url }}/assets/javascript/walnut/walnut.js"></script>
+<script type="text/javascript" walnut-script src="/assets/vendors/walnut/walnut.js"></script>

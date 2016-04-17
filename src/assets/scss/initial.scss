@@ -35,9 +35,13 @@
 @import "5-components/navigation";
 @import "5-components/sub-nav";
 @import "5-components/start-screen";
+@import "5-components/gallery";
 
 /* PAGES
 ============================================================================ */
 @import "6-pages/home-initial";
 @import "6-pages/page";
 @import "6-pages/blog";
+@import "6-pages/post";
+@import "6-pages/about";
+@import "6-pages/project";

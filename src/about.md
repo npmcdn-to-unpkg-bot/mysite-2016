@@ -12,6 +12,7 @@ classes:
     <div class="page-border"></div>
     <div class="page-copy copy">
         <p>This site was made by myself exclusively. The technology behind is Jekyll.</p>
+        <p>I avoid using plugins and libraries when possible. For this site I've used a smoothscrolling plugin from greensock to make it durrable and not buggy.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

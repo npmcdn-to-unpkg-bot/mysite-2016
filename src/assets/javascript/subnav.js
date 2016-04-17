@@ -67,7 +67,7 @@ if(document.querySelector(".sub-nav") instanceof HTMLElement) {
 	}
 
 
-	var items = _.get(".sub-nav__item a");
+	var items = _.get(".anchor-link");
 
 	for (var i = 0; i < items.length; i++) {
 

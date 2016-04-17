@@ -165,6 +165,13 @@ gulp.task('fonts', () =>
     .pipe($.size({title: 'fonts'}))
 );
 
+// 'gulp vendors' -- copies your vendors to the temporary assets folder
+gulp.task('vendors', () =>
+  gulp.src('src/assets/vendors/**/*')
+    .pipe(gulp.dest('.tmp/assets/vendors'))
+    .pipe($.size({title: 'vendors'}))
+);
+
 // 'gulp html' -- does nothing
 // 'gulp html --prod' -- minifies and gzips our HTML files
 gulp.task('html', () =>
@@ -211,7 +218,7 @@ gulp.task('serve', () => {
     // tunnel: true,
     // open: false,
     options: {
-      browser:   'Google Chrome Canary'
+      browser:   'Google Chrome'
     },
     server: {
       baseDir: ['.tmp', 'dist']
@@ -225,6 +232,7 @@ gulp.task('serve', () => {
   gulp.watch('src/assets/javascript/**/*.js', gulp.series('scripts'));
   gulp.watch('src/assets/scss/**/*.scss', gulp.series('styles'));
   gulp.watch('src/assets/images/**/*', reload);
+  gulp.watch('src/assets/vendors/**/*', reload);
 });
 
 // 'gulp assets' -- cleans out your assets and rebuilds them
@@ -232,7 +240,7 @@ gulp.task('serve', () => {
 // production settings
 gulp.task('assets', gulp.series(
   gulp.series('clean:assets'),
-  gulp.parallel('styles', 'scripts', 'fonts', 'images')
+  gulp.parallel('styles', 'scripts', 'fonts', 'images', 'vendors')
 ));
 
 // 'gulp assets:copy' -- copies the assets into the dist folder, needs to be
