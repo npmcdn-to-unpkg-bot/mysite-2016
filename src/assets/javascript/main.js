@@ -24,26 +24,4 @@
 
 })();
 
-(function check_if_user_has_visited_before() {
 
-	var start = _.get('.startscreen')[0];
-	if (start instanceof HTMLElement) {
-		if (typeof(Storage) !== 'undefined') {
-
-		    if (localStorage.hasVisitedBefore) {
-
-		        start.style.display = 'none';
-
-		    } else {
-		        localStorage.hasVisitedBefore = true;
-
-		    }
-
-		} else {
-		    // Sorry! No Web Storage support..
-		}
-	}
-
-
-
-})();

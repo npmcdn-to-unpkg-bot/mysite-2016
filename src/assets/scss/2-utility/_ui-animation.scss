@@ -3,6 +3,7 @@
 @mixin hardwareAccel() {
     // Improve performance on mobile/tablet devices
     transform: translateZ(0);
+    will-change: transform;
 }
 
 @mixin improveAntiAlias() {
@@ -230,6 +231,28 @@
 
 @mixin bounce($time:1s, $delay:0s) {
     animation-name: bounce;
+    animation-duration: $time;
+    animation-delay: $delay;
+    animation-fill-mode: both;
+    // transition-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    transform-origin: center bottom;
+    @include hacks();
+}
+
+
+@keyframes scale-up {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+}
+
+@mixin scale-up($time:1s, $delay:0s) {
+    animation-name: scale-up;
     animation-duration: $time;
     animation-delay: $delay;
     animation-fill-mode: both;

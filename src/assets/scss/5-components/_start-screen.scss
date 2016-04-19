@@ -5,7 +5,7 @@
     @include fade-out(2s, 4s);
     @include hacks();
     pointer-events: none;
-    // display: none;
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -24,10 +24,12 @@
 }
 
 .startscreen-heading--main {
-	@include fade-in(2s, 0.5s);
+	@include fade-in(1s, 0.5s);
 	font-size: 6em;
+	max-width: 300px;
 }
 
 .startscreen-heading--sub {
-	@include fade-in-down(4s, 1.5s);
+	@include fade-in(2s, 1.5s);
+	line-height: 1.7;
 }

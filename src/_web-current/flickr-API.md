@@ -1,5 +1,5 @@
 ---
-title: Flickr API
+title: TurtleJS
 site_url:
 date: 2014-01-01
 theme_color: null
@@ -14,5 +14,6 @@ tools:
 
 ---
 
-Flickr Grid
+I'm working on a plug-in that works similarly to flickr's grid.
+
 <!--more-->

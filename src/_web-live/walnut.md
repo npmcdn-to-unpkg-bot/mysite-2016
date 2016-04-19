@@ -10,7 +10,7 @@ images:
   - weather_app.png
   - kackt.png
 tools:
-  - Vanilla JS
+  - JavaScript
   - SVG
 
 ---

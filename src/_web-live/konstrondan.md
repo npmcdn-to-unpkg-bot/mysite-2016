@@ -8,10 +8,14 @@ image-main: konstrondan.jpg
 images:
   - 
 tools:
+  - PHP
   - Wordpress
+
 
 ---
 
-Konstrondan is a wordpress powered site, for this site I built a unique theme from the ground up. This is the way I prefer to build WP-themes. 
+Konstrondan is a wordpress powered site, for this site I built a unique theme from the ground up. This is the way I prefer to build WP-themes. On request I made it simple for the customer to change content on the site, for the good and bad.
+
 <!--more-->
-Konstrondan is a site for creative art people in living in Småland, Sweden.
+
+Konstrondan is a site for creative art people in living in Småland, Sweden. 

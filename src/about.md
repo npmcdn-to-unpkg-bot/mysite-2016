@@ -6,19 +6,16 @@ classes:
   - page-about
 ---
 
-<div class="wrapper-md main">
+<div class="wrapper-sm main">
   <article class="page-article">
     <h1 class="page-heading">About this site</h1>
     <div class="page-border"></div>
     <div class="page-copy copy">
-        <p>This site was made by myself exclusively. The technology behind is Jekyll.</p>
-        <p>I avoid using plugins and libraries when possible. For this site I've used a smoothscrolling plugin from greensock to make it durrable and not buggy.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>This site it build with static files using a technology called Jekyll. I did this to make the site more secure and fast.
+        <br>
+        <br>
+        I have chosen to avoid using plugins and libraries as much as possible. For this site I've used a smooth-scrolling plugin from <a href="http://greensock.com/ScrollToPlugin" class="link">GreenSock.com</a> to make it durrable and less buggy.</p>
+        
     </div>
   </article>
     
@@ -30,7 +27,7 @@ classes:
         <p>I'm a Swedish front-end web developer. My main areas of expertise are JavaScript, PHP and CSS. I studied web development and graphic design for 2 years in Sweden and exclusively web development for one semester in Canberra, Australia. I'm currently working at a agency called <a href="//grandpublic.se" target="_blank" class="link">Grand Public</a>.</p>
      </div>
     
-    <img class="page-image" src="/assets/images/profile.jpg">
+    <img class="page-image" src="/assets/images/profile-2.jpg">
     
      <div class="copy">
         <p></p>

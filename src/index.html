@@ -7,7 +7,15 @@ classes: page-home
 
 <div class="startscreen">
 	<div class="startscreen-content">
-		<h2 class="startscreen-heading startscreen-heading--main">Anton Furuholm</h2>
+		<h2 class="startscreen-heading startscreen-heading--main">
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve" style="width: 300px">
+			<g>
+				<polygon points="19.985,26.606 19.985,0.033 19.839,-0.009 8.384,39.984 16.155,39.984 	"/>
+				<polygon points="21.092,-0.009 20.944,0.033 20.944,26.606 24.776,39.984 32.547,39.984 	"/>
+				<polygon points="17.922,37.945 17.331,40.009 23.647,40.009 23.058,37.945 	"/>
+			</g>
+			</svg>
+		</h2>
 		<h3 class="startscreen-heading startscreen-heading--sub">
 			Web developer<br>
 			Photographer<br>
@@ -15,18 +23,37 @@ classes: page-home
 		</h3>
 	</div>
 </div>
+<script type="text/javascript">
+	(function check_if_user_has_visited_before() {
+
+		var start = document.querySelector('.startscreen');
+		if (start instanceof HTMLElement) {
+			if (typeof(Storage) !== 'undefined') {
+			    if (!localStorage.hasVisitedBefore) {
+			    	localStorage.hasVisitedBefore = true;
+			    	start.style.display = 'block';
+			    }
+			}
+		}
+	})();
+</script>
 
 <div class="home">
 
-
-
-	<section class="home-intro" style="background-image: url(/assets/images/background-1.jpg);">
+	<section class="home-intro" style="background-image: url(/assets/images/hobbit_house.jpg);">
 		<div class="home-intro__content">
-			<h1 class="home-intro__title heading">Anton Furuholm</h1>
-			<h2 class="home-intro__text">Web Developer<br>
-			Photographer<br>
-			Fitness Enthusiast</h2>
+			<div class="home-intro__scale">
+				<p class="home-intro__text-welcome">Welcome</p>
+				<div class="home-intro__content-main">
+					<span class="home-intro__title-fix">TO</span>
+					<h1 class="home-intro__title">Furuholm</h1>
+					<span class="home-intro__title-fix">.COM</span>
+				</div>
+			</div>
 		</div>
+		<h2 class="home-intro__text"><strong>Web</strong>Developer<br>
+		Photo<strong>grapher</strong><br>
+		<strong>Fitness</strong>Enthusiast</h2>
 		<a href="#sandbox" class="home-intro__arrow-down anchor-link">
 			<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4">
 				<path fill="#fff" d="M400.7 623L49 308l16-17.8 335.7 300.3L742 285l16 18-357.3 320z"/>
@@ -70,9 +97,11 @@ classes: page-home
 		</div>
 	</section>
 
-	<div class="home-background"></div>
+	<div class="home-background">
+		<h3>Programming has become a big part of my life.</h3>
+	</div>
 
-	<div id="postRender">
+	<div id="">
 		<section class="home-live home-section">
 			<div class="anchor" id="liveProjects"></div>
 			<div class="wrapper-md ">
@@ -95,7 +124,9 @@ classes: page-home
 			</div>
 		</section>
 
-		<div class="home-background"></div>
+		<div class="home-background">
+			<h3>I love the way it challenges my mind.</h3>
+		</div>
 
 		<!-- {% if site.posts %}
 		<section class="home-blog home-section">
@@ -141,7 +172,7 @@ classes: page-home
 					<a href="/about" class="home-about__link button-round">Read more</a>
 				</div>
 			</div>
-			<div class="home-about__part home-about__part--image" style="background-image: url(/}{{ page.aboutImage }})">
+			<div class="home-about__part home-about__part--image" style="background-image: url({{ page.aboutImage }})">
 			</div>
 		</section>
 

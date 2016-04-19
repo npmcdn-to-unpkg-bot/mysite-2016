@@ -17,6 +17,54 @@ import autoprefixer from 'autoprefixer';
 // Yargs for command line arguments
 import {argv} from 'yargs';
 
+import swPrecache from 'sw-precache';
+
+gulp.task('generate-service-worker', function(callback) {
+  writeServiceWorkerFile(true, callback);
+});
+
+// Service Worker
+function writeServiceWorkerFile(handleFetch, callback) {
+
+  var packageJson = require('package-json');
+  var path = require('path');
+  var rootDir = "dist";
+
+  var config = {
+    cacheId: packageJson.name,
+    // If handleFetch is false (i.e. because this is called from generate-service-worker-dev), then
+    // the service worker will precache resources but won't actually serve them.
+    // This allows you to test precaching behavior without worry about the cache preventing your
+    // local changes from being picked up during the development cycle.
+    handleFetch: handleFetch,
+    // logger: $.util.log,
+    runtimeCaching: [{
+      // See https://github.com/GoogleChrome/sw-toolbox#methods
+      urlPattern: /runtime-caching/,
+      handler: 'networkFirst',
+      // See https://github.com/GoogleChrome/sw-toolbox#options
+      options: {
+        cache: {
+          maxEntries: 1,
+          name: 'runtime-cache'
+        }
+      }
+    }],
+    staticFileGlobs: [
+      rootDir + '/assets/css/**.css',
+      rootDir + '/**.html',
+      rootDir + '/assets/images/**.*',
+      rootDir + '/assets/js/**.js'
+    ],
+    stripPrefix: rootDir + '/',
+    // verbose defaults to false, but for the purposes of this demo, log more.
+    verbose: true
+  };
+
+  swPrecache.write(path.join(rootDir, 'service-worker.js'), config, callback);
+}
+
+
 // 'gulp clean:assets' -- deletes all assets except for images
 // 'gulp clean:images' -- deletes your images
 // 'gulp clean:dist' -- erases the dist folder
@@ -132,7 +180,9 @@ gulp.task('scripts', () =>
 // 'gulp inject:head' -- injects our style.css file into the head of our HTML
 gulp.task('inject:head', () =>
   gulp.src('src/_includes/head.html')
-    .pipe($.inject(gulp.src('.tmp/assets/stylesheets/initial.css',
+    // .pipe($.inject(gulp.src('.tmp/assets/stylesheets/initial*.css',
+    //                         {read: false}), {ignorePath: '.tmp'}))
+    .pipe($.inject(gulp.src('.tmp/assets/stylesheets/style*.css',
                             {read: false}), {ignorePath: '.tmp'}))
     .pipe(gulp.dest('src/_includes'))
 );
@@ -141,8 +191,6 @@ gulp.task('inject:head', () =>
 gulp.task('inject:footer', () =>
   gulp.src('src/_layouts/default.html')
     .pipe($.inject(gulp.src('.tmp/assets/javascript/*.js',
-                            {read: false}), {ignorePath: '.tmp'}))
-    .pipe($.inject(gulp.src('.tmp/assets/stylesheets/style.css',
                             {read: false}), {ignorePath: '.tmp'}))
     .pipe(gulp.dest('src/_layouts'))
 );
@@ -231,8 +279,8 @@ gulp.task('serve', () => {
   gulp.watch(['src/**/*.xml', 'src/**/*.txt'], gulp.series('jekyll'));
   gulp.watch('src/assets/javascript/**/*.js', gulp.series('scripts'));
   gulp.watch('src/assets/scss/**/*.scss', gulp.series('styles'));
-  gulp.watch('src/assets/images/**/*', reload);
-  gulp.watch('src/assets/vendors/**/*', reload);
+  gulp.watch('src/assets/images/**/*', gulp.series('images'), reload);
+  gulp.watch('src/assets/vendors/**/*', gulp.series('vendors'), reload);
 });
 
 // 'gulp assets' -- cleans out your assets and rebuilds them
@@ -266,7 +314,8 @@ gulp.task('default', gulp.series(
 gulp.task('build', gulp.series(
   gulp.series('clean:assets', 'clean:gzip'),
   gulp.series('assets', 'inject:head', 'inject:footer'),
-  gulp.series('jekyll', 'assets:copy', 'html')
+  gulp.series('jekyll', 'assets:copy', 'html'),
+  gulp.series('generate-service-worker')
 ));
 
 // 'gulp clean' -- erases your assets and gzipped files
@@ -280,52 +329,4 @@ gulp.task('rebuild', gulp.series('clean:dist', 'clean:assets',
 // 'gulp check' -- checks your Jekyll configuration for errors and lint your JS
 gulp.task('check', gulp.series('jekyll:doctor', 'lint'));
 
-// Service Worker
-function writeServiceWorkerFile(rootDir, handleFetch, callback) {
 
-  var packageJson = require('package-json');
-  var path = require('path');
-
-  var config = {
-    cacheId: packageJson.name,
-    dynamicUrlToDependencies: {
-      // 'dynamic/page1': [
-      //   path.join(rootDir, '', 'index.jade')
-      // ]
-      // ,
-      // 'dynamic/page2': [
-      //   path.join(rootDir, 'views', 'layout.jade'),
-      //   path.join(rootDir, 'views', 'page2.jade')
-      // ]
-    },
-    // If handleFetch is false (i.e. because this is called from generate-service-worker-dev), then
-    // the service worker will precache resources but won't actually serve them.
-    // This allows you to test precaching behavior without worry about the cache preventing your
-    // local changes from being picked up during the development cycle.
-    handleFetch: handleFetch,
-    logger: $.util.log,
-    runtimeCaching: [{
-      // See https://github.com/GoogleChrome/sw-toolbox#methods
-      urlPattern: /runtime-caching/,
-      handler: 'networkFirst',
-      // See https://github.com/GoogleChrome/sw-toolbox#options
-      options: {
-        cache: {
-          maxEntries: 1,
-          name: 'runtime-cache'
-        }
-      }
-    }],
-    staticFileGlobs: [
-      rootDir + '/assets/css/**.css',
-      rootDir + '/**.html',
-      rootDir + '/assets/images/**.*',
-      rootDir + '/assets/js/**.js'
-    ],
-    stripPrefix: rootDir + '/',
-    // verbose defaults to false, but for the purposes of this demo, log more.
-    verbose: true
-  };
-
-  swPrecache.write(path.join(rootDir, 'service-worker.js'), config, callback);
-}
