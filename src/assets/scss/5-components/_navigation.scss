@@ -93,7 +93,7 @@ $nav-small: 60px;
     text-transform: uppercase;
     padding: 1em 0.5em;
     display: block;
-    font-weight: 300;
+    font-weight: 400;
     color: #777;
 
 
@@ -129,7 +129,7 @@ $nav-small: 60px;
     pointer-events: none;
     user-select: none;
     .page-home & {
-    	color: #ededed;
+    	color: rgba(#fff, 0.7);
     }
 }
 

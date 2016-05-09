@@ -23,13 +23,7 @@ defaults:
 
   - scope:
       path: ''
-      type: 'web-current'
-    values:
-      layout: 'project'
-
-  - scope:
-      path: ''
-      type: 'web-live'
+      type: 'web_projects'
     values:
       layout: 'project'
 
@@ -93,12 +87,7 @@ jekyll-archives:
     tags: '/tag/:name/'
 
 collections:
-  web-current:
+  web_projects:
     output: true
     layout: project
-    permalink: /current/:path/
-
-  web-live:
-    output: true
-    layout: project
-    permalink: /live/:path/
+    permalink: /web-projects/:path/

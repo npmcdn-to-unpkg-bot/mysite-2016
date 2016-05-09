@@ -1,0 +1,32 @@
+<section class="home-photo home-section">
+	<div class="anchor" id="photography"></div>
+
+	<header class="home-section__header">
+		<div class="wrapper-md home-heading__inner">
+
+			<h2 class="home-heading heading">
+				Photography
+			</h2>
+			<p>Photography is a big hobby of mine.</p>
+			<p class="home-section__border"></p>
+		</div>
+	</header>
+
+	<div class="wrapper-md">
+
+		<ul class="box__container turtlejs" walnut>
+			{% assign photos = site.data.photos %}
+			{% for photo in photos %}
+				<img walnut-image src="/assets/images/portfolio/{{ photo.url }}" alt="" style="opacity:0;" data-title="{{ photo.title }}">
+			{% endfor %}
+		</ul>
+	</div>
+	<a href="https://www.flickr.com/photos/furuholm-photography/" class="home-section__moreBtn" target="_blank">See more at Flickr.com</a>
+	<script type="text/javascript">
+		window.addEventListener("load", function () {
+			 turtle.init();
+			 walnut.init();
+		});
+
+	</script>
+</section>

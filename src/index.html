@@ -1,4 +1,5 @@
 ---
+title: Home
 layout: default
 regenerate: true
 aboutImage: /assets/images/profile.jpg
@@ -64,118 +65,36 @@ classes: page-home
 	<div style="height: 47px">
 		<nav class="sub-nav">
 			<ul class="wrapper wrapper-no-padding">
-				<li class="sub-nav__item"><a class="anchor-link" href="#sandbox">Current projects</a>
-				<li class="sub-nav__item"><a class="anchor-link" href="#liveProjects">Live Project</a>
+				<li class="sub-nav__item"><a class="anchor-link" href="#web">Web Projects</a>
+				<li class="sub-nav__item"><a class="anchor-link" href="#photography">Photography</a>
 				<!-- <li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a> -->
 				<li class="sub-nav__item"><a class="anchor-link" href="#about">Short About Me</a>
 			</ul>
 		</nav>
 	</div>
 
-	<section class="home-sandbox home-section pb4">
-		<div class="anchor" id="sandbox"></div>
-
-		<header class="home-section__header">
-			<div class="wrapper-md home-heading__inner">
-
-				<h2 class="home-heading heading">
-					Current web Projects
-				</h2>
-				<p>These are web projects I'm working on.</p>
-				<p class="home-section__border"></p>
-			</div>
-		</header>
-
-		<div class="wrapper-md">
-
-			<ul class="box__container mxn2">
-				{% assign projects = site.web-current | sort='date, title' %}
-				{% for project in projects reversed %}
-					{% include box.html %}
-				{% endfor %}
-			</ul>
-		</div>
-	</section>
+	{% include modules/web-projects.html %}
 
 	<div class="home-background">
-		<h3>Programming has become a big part of my life.</h3>
+		<h3>I love the way programming challenges my mind.</h3>
+	</div>
+
+	{% include modules/photography.html %}
+
+	<div class="home-background">
+		<h3>Photography has helped me see the world in more detail.</h3>
 	</div>
 
 	<div id="">
-		<section class="home-live home-section">
-			<div class="anchor" id="liveProjects"></div>
-			<div class="wrapper-md ">
-				<div class="home-section__header">
-					<div class="home-heading__inner">
-						<h2 class="home-heading heading">
-							Live web Project
-						</h2>
-						<p>These are projects I have delivered or are ready for public use.</p>
-						<p class="home-section__border"></p>
-					</div>
-				</div>
-
-				<ul class="box__container">
-					{% assign projects = site.web-live | sort='date, title' %}
-					{% for project in projects reversed %}
-						{% include box.html %}
-					{% endfor %}
-				</ul>
-			</div>
-		</section>
-
-		<div class="home-background">
-			<h3>I love the way it challenges my mind.</h3>
-		</div>
 
 		<!-- {% if site.posts %}
-		<section class="home-blog home-section">
-			<div class="anchor" id="blog"></div>
-			<div class="wrapper-md">
-				<div class="home-section__header">
-					<div class="wrapper-md home-heading__inner">
-						<h2 class="home-heading heading">
-							Blog
-						</h2>
-						<p>My most recent posts about the web.</p>
-						<p class="home-section__border"></p>
-					</div>
-				</div>
-				<div class="home-blog__content">
-					{% assign posts = site.posts | sort='date, title' %}
-					{% for post in posts reversed %}
-					<div class="box__item--inner box__item--blog mb3">
-						<h3 class="heading">{{ post.title }}</h3>
-						<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-						{{ post.excerpt }}
-					</div>
-					{% endfor %}
-					<a href="#" class="button-round">Read more</a>
-				</div>
-			</div>
-		</section>
+			{% include modules/blog.html %}
 		{% endif %} -->
 
-		<section class="home-about">
-			<div class="anchor" id="about"></div>
-			<div class="home-about__part home-about__part--text">
-				<div class="home-about__content">
-					<h2 class="heading">Hello!</h2>
-					<p>I'm a Swedish front-end web developer. My main areas of expertise are JavaScript, PHP and CSS.
-					</p>
-					<p>
-					I studied web development and graphic design for 2 years in Sweden and exclusively web development for one semester in Canberra, Australia. <br>
-					I'm currently working at a agency called <a href="//grandpublic.se" target="_blanck" class="link">Grand Public</a>
-					</p>
-					<p></p>
-					<a href="/about" class="home-about__link button-round">Read more</a>
-				</div>
-			</div>
-			<div class="home-about__part home-about__part--image" style="background-image: url({{ page.aboutImage }})">
-			</div>
-		</section>
+		{% include modules/about.html %}
 
 		<h2 class="home-phone"><a href="tel:+4673-072 92 79">+46 730 72 92 79</a></h2>
 	</div>
 </div>
+
+<script type="text/javascript" src="/assets/vendors/walnut/walnut.js" walnut-script></script>

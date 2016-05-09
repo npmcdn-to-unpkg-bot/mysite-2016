@@ -1,6 +1,8 @@
 
 .page-article {
-	padding-bottom: 4rem;
+	& + & {
+		padding-top: 4rem;
+	}
 }
 
 .page-heading {

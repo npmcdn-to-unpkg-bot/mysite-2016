@@ -1,0 +1,26 @@
+<section class="home-blog home-section">
+	<div class="anchor" id="blog"></div>
+	<div class="wrapper-md">
+		<div class="home-section__header">
+			<div class="wrapper-md home-heading__inner">
+				<h2 class="home-heading heading">
+					Blog
+				</h2>
+				<p>My most recent posts about the web.</p>
+				<p class="home-section__border"></p>
+			</div>
+		</div>
+		<div class="home-blog__content">
+			{% assign posts = site.posts | sort='date, title' %}
+			{% for post in posts reversed %}
+			<div class="box__item--inner box__item--blog mb3">
+				<h3 class="heading">{{ post.title }}</h3>
+				<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+				{{ post.excerpt }}
+			</div>
+			{% endfor %}
+			<a href="#" class="button-round">Read more</a>
+		</div>
+	</div>
+</section>

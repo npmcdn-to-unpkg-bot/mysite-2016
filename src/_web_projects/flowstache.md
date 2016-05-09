@@ -18,6 +18,6 @@ tools:
 
 ---
 
-Flowstache is a plug-in for developers who wants a easy way to show instagram images on their web site. I built this with <a class="link" href="//kaloja.se">Mattias Haal</a> and <a class="link" href="//filiprundberg.se/">Filip Rund</a> while we studied at Jönköping's University. 
+Flowstache is a plug-in for developers who wants a easy way to show instagram images on their web site. I built this with <a class="link" href="//kaloja.se" target="_blanck">Mattias Haal</a> and <a class="link" href="//filiprundberg.se/" target="_blanck">Filip Rund</a> while we studied at Jönköping's University. 
 
 <!--more-->

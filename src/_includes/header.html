@@ -24,7 +24,9 @@
       <div class="site-nav__list" id="siteNav">
         <p class="site-nav__explain">Pages:</p>
         {% for nav in site.data.pages %}
-          <a class="site-nav__item" href="{{ nav.url }}">{{ nav.title }}</a>
+        	{% unless nav.title == page.title %}
+          		<a class="site-nav__item" href="{{ nav.url }}">{{ nav.title }}</a>
+          	{% endunless %}
         {% endfor %}
       </div>
     </nav>

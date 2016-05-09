@@ -1,0 +1,61 @@
+- programming:  
+  - languages:
+    - title: HTML
+      level: Advanced
+    - title: CSS
+      level: Advanced
+    - title: JavaScript / Ecmascript 2016 (ES7)
+      level: Advanced
+    - title: PHP
+      level: Advanced
+    - title: Swift
+      level: Basic
+    - title: NodeJS
+      level: Basic
+
+  - frameworks:
+    - title: Meteor
+    - title: Aurelia
+    - title: Laravel 5
+
+  - CMS:
+    - title: Wordpress
+    - title: Kirby 2.0
+
+  - languageenhancers:
+    - title: Sass / Scss
+    - title: LESS
+    - title: JQuery
+    - title: Jekyll
+    - title: Polymer (Web Components)
+
+  - buildtools: 
+    - title: Gulp
+    - title: Grunt
+
+  - managers: 
+    - title: Git
+    - title: Github
+    - title: Bitbucket
+    - title: Tower
+
+  - other: 
+    - title: JavaScript API's
+    - title: Stripe (eCommerce)
+    - title: UI / UX
+    - title: SEO
+    - title: Vagrant
+    - title: Service Workers
+    - title: GSAP
+    - title: JavaScript Design Patterns
+
+  - conventions:
+    - title: MVC
+    - title: BEM (Classnames)
+
+  - backend: 
+    - title: Database design
+    - title: MySQL
+    - title: NoSQL
+    - title: Firebase
+    - title: Digital Ocean

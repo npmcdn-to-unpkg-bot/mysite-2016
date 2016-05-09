@@ -2,13 +2,12 @@
 title: WalnutJS
 site_url: 
 date: 2016-01-01
+featured: true
 image-preview: walnut-preview.jpg
 image-background: walnut-blur.jpg
 image-main: walnut.jpg
 images:
   - walnut.jpg
-  - weather_app.png
-  - kackt.png
 tools:
   - JavaScript
   - SVG

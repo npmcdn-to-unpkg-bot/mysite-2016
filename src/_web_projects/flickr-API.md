@@ -2,6 +2,7 @@
 title: TurtleJS
 site_url:
 date: 2014-01-01
+featured: true
 theme_color: null
 image-preview: flickr-preview.jpg
 image-background: flickr-blur.jpg

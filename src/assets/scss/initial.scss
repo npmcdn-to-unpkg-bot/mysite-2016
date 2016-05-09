@@ -14,7 +14,6 @@
 @import "1-config/variables";
 @import "1-config/helper";
 @import "1-config/mixins";
-@import "1-config/space";
 @import "1-config/grid";
 
 /*  UTILITY
@@ -36,6 +35,7 @@
 @import "5-components/sub-nav";
 @import "5-components/start-screen";
 @import "5-components/gallery";
+@import "5-components/photography";
 
 /* PAGES
 ============================================================================ */
@@ -45,3 +45,8 @@
 @import "6-pages/post";
 @import "6-pages/about";
 @import "6-pages/project";
+
+/* GLOBAL
+============================================================================ */
+@import "7-global/global";
+@import "7-global/module";

@@ -1,0 +1,27 @@
+<section class="home-sandbox home-section">
+	<div class="anchor" id="web"></div>
+
+	<header class="home-section__header">
+		<div class="wrapper-md home-heading__inner">
+
+			<h2 class="home-heading heading">
+				Web Projects
+			</h2>
+			<p>These are some projects that I've developed for the web.</p>
+			<p class="home-section__border"></p>
+		</div>
+	</header>
+
+	<div class="wrapper-md">
+
+		<ul class="box__container">
+			{% assign projects = site.web_projects %}
+			{% for project in projects reversed %}
+				{% if project.featured == true  %}
+					{% include box.html %}
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+	<a href="/web" class="home-section__moreBtn">See more</a>
+</section>

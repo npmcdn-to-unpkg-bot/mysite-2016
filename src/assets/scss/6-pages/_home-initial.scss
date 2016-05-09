@@ -1,5 +1,8 @@
 /* Component: Home
 ============================================================================ */
+.home {
+	overflow: hidden;
+}
 
 .home-intro {
 	background-color: #fff;
@@ -45,6 +48,7 @@
 		font-weight: 900;
 		text-transform: uppercase;
 		color: #fff;
+		transform: translateZ(0);
 
 		@media screen and (min-width: $sm) {
 			margin-top: -3px;
@@ -61,6 +65,10 @@
 	}
 }
 
+.home-intro__scale {
+	// @include scale-up(80s);
+}
+
 .home-intro__text-welcome {
 	@include fade-in-down(2s, 0.5s);
 	color: #fff;
@@ -72,10 +80,6 @@
 		font-size: 2rem;
 	}
 
-}
-
-.home-intro__scale {
-	// @include scale-up(80s);
 }
 
 .home-intro__title-fix {
@@ -94,16 +98,17 @@
 	position: absolute;
 	top: 45%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	width: 100%;
 	text-align: center;
+	-webkit-backface-visibility: hidden;
+	transform: translate(-50%, -50%) translateZ(0) scale(1.1, 1.1);
 
 	@media screen and (min-width: $md) {
 		top: 50%;
 	}
 
 	@media screen and (min-width: $xl) {
-		// right: 20%;
+
 	}
 }
 
@@ -127,6 +132,10 @@
 	text-align: right;
 	border-right: 1px solid #fff;
 	padding-right: 0.5em;
+	transform: translateZ(0);
+	transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1.0, 1.0);
 
 	font-size: 3vw;
 	margin-top: 0;
