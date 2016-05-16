@@ -1,3 +1,36 @@
 .turtlejs-item {
 	cursor: pointer;
+	opacity: 0;
+
+	@media screen and (max-width: $md) {
+		&:nth-of-type(1n+4) {
+			display: none;
+		}
+	}
+
+	.has-js & {
+		transform: scale(0);
+	}
+}
+
+.homePhoto_gallery {
+	@extend .wrapper-md;
+	text-align: left;
+
+	.no-js & {
+		@extend %clearfix;
+		img {
+			width: 100%;
+
+			@media (min-width: $md) {
+				width: 50%;
+				float: left;
+				object-fit: cover;
+				height: 300px;
+				&:nth-of-type(2n+3) {
+					clear: left;
+				}
+			}
+		}
+	}
 }

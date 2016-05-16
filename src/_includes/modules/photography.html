@@ -1,32 +1,20 @@
-<section class="home-photo home-section">
-	<div class="anchor" id="photography"></div>
+<section class="homePhoto homeSection">
+	<i class="anchor" id="photoAnchor"></i>
 
-	<header class="home-section__header">
-		<div class="wrapper-md home-heading__inner">
-
-			<h2 class="home-heading heading">
-				Photography
-			</h2>
-			<p>Photography is a big hobby of mine.</p>
-			<p class="home-section__border"></p>
-		</div>
+	<header class="homeSection_header">
+		<h2 class="homeHeading heading">
+			Photography
+		</h2>
+		<p>I loved photography since I was young. But was not until a few years ago I started learning about the camera and started using a DSLR.</p>
+		<p class="homeSection_border"></p>
 	</header>
 
-	<div class="wrapper-md">
+	<ul class="homePhoto_gallery turtlejs" walnut>
+		{% assign photos = site.data.photos %}
+		{% for photo in photos %}
+			<img walnut-image src="/assets/images/portfolio/{{ photo.url }}" alt="" data-title="{{ photo.title }}">
+		{% endfor %}
+	</ul>
+	<a href="https://www.flickr.com/photos/furuholm-photography/" class="homeSection_moreBtn" target="_blank">See more at Flickr.com</a>
 
-		<ul class="box__container turtlejs" walnut>
-			{% assign photos = site.data.photos %}
-			{% for photo in photos %}
-				<img walnut-image src="/assets/images/portfolio/{{ photo.url }}" alt="" style="opacity:0;" data-title="{{ photo.title }}">
-			{% endfor %}
-		</ul>
-	</div>
-	<a href="https://www.flickr.com/photos/furuholm-photography/" class="home-section__moreBtn" target="_blank">See more at Flickr.com</a>
-	<script type="text/javascript">
-		window.addEventListener("load", function () {
-			 turtle.init();
-			 walnut.init();
-		});
-
-	</script>
 </section>

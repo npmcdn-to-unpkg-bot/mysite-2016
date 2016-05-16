@@ -1,7 +1,7 @@
 /* Component: Home
 ============================================================================ */
 
-.home-background {
+.homeBackground {
     height: 200px;
     background-image: url('/assets/images/background-2.jpg');
     background-repeat: no-repeat;
@@ -26,18 +26,26 @@
 
     h3 {
     	text-align: center;
-    	@include position;
+
     	color: #fff;
-    	z-index: 3;
+
 		text-shadow: 0 0px 1px rgba(0, 0, 0, 0.4);
     }
 }
 
-.home-section {
-	text-align: center;
+
+.homeBackground_inner {
+	@include position;
+	z-index: 3;
 }
 
-.home-section__number {
+.homeSection {
+	text-align: center;
+	padding: 2rem 1rem 3rem;
+	position: relative;
+}
+
+.homeSection_number {
 	text-align: left;
 	background-color: #444;
 	padding: 1em 0;
@@ -46,7 +54,7 @@
 		color: #aaa;
 	}
 }
-.home-section__border {
+.homeSection_border {
 	height: 1px;
 	width: 100px;
 	display: inline-block;
@@ -54,11 +62,15 @@
 	margin-top: 1rem;
 }
 
-.home-sandbox {
-	background-color: $color-background;
+.homeSection_header {
+	max-width: 500px;
+	margin: {
+		left: auto;
+		right: auto;
+	}
 }
-.home-blog__content {
 
+.homeBlog_content {
 	@include col(1);
 	float: left;
 
@@ -67,65 +79,58 @@
 	}
 }
 
-.home-about {
+.homeAbout {
+	@extend %clearfix;
 	display: flex;
 	flex-wrap: wrap;
 	background-color: #F7F7F7;
-	@extend %clearfix;
 	position: relative;
+}
 
-	&__part {
+.homeAbout_content {
+	padding: 60px 20px;
 
-		@include col(1);
-		float: left;
+	@include media-query($md) {
+		max-width: 450px;
+		padding: 80px 30px;
+		float: right;
+	};
+}
 
-		@include media-query($sm) {
-			// @include col(2);
-		};
+.homeAbout_link {
+	margin-top: 1em;
+}
 
-		&--image {
+.homeAbout_part {
 
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center center;
+	@include col(1);
+	float: left;
 
-			@media screen and (max-width: $md) {
-				@include aspect-ratio(16,9);
+	@include media-query($sm) {
+		// @include col(2);
+	};
+}
 
-			}
+.homeAbout_part-image {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 
-			// @include media-query($sm) {
-			//     width: 50%;
-			// };
-			@include media-query($md) {
-				width: 60%;
-			};
-		}
+	@media screen and (max-width: $md) {
+		@include aspect-ratio(16,9);
 
-		&--text {
-
-			// @include media-query($sm) {
-			//     width: 50%;
-			// };
-			// text-align: center;
-			@include media-query($md) {
-				width: 40%;
-			};
-		}
 	}
 
-	&__content {
-		padding: 60px 20px;
-		@include media-query($md) {
-			max-width: 450px;
-			padding: 80px 30px;
-			float: right;
-		};
-	}
+	@include media-query($md) {
+		width: 60%;
+	};
+}
 
-	&__link {
-		margin-top: 1em;
-	}
+.homeAbout_part-text {
+
+	@include media-query($md) {
+		width: 40%;
+	};
 }
 
 .home-phone {
@@ -149,7 +154,7 @@
 	}
 }
 
-.home-section__moreBtn {
+.homeSection_moreBtn {
 	@extend .button-round;
 	text-align: center;
 	margin-top: 3rem;

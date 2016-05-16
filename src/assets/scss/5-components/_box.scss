@@ -2,16 +2,21 @@
 ============================================================================ */
 $box-image-width: 180px;
 
-.box__item {
+.box_item {
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
 	background-color: #fff;
 	transition: all .1s ease-in-out;
 	vertical-align: top;
-	@include col(2);
+	width: 100%;
 	padding: 0;
 	margin: 0;
+	height: 100px;
+
+	&:last-of-type {
+		height: inherit;
+	}
 
 	@include media-query($xs) {
 		@include col(3);
@@ -40,7 +45,7 @@ $box-image-width: 180px;
 }
 
 
-.box-mobile__content {
+.boxMobile_content {
 	display: none;
 	@media screen and (max-width: 600px) {
 		display: none;
@@ -48,7 +53,7 @@ $box-image-width: 180px;
 		width: 100%;
 		padding: 1rem;
 
-		.box__item--open + & {
+		.box_item--open + & {
 			display: block;
 		}
 	}
@@ -56,7 +61,7 @@ $box-image-width: 180px;
 
 
 
-.box__image {
+.box_image {
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
@@ -73,17 +78,14 @@ $box-image-width: 180px;
 	};
 }
 
-.box__container {
+.box_container {
 	margin: {
 		left: -1rem;
 		right: -1rem;
 	}
 }
 
-.box__content {
-	@include media-query($sm, $option:max) {
-		display: none;
-	}
+.box_content {
 	padding: 0;
 	float: left;
 	position: absolute;
@@ -94,8 +96,8 @@ $box-image-width: 180px;
 	color: #fff;
 	z-index: 2;
 	width: 100%;
-	padding: 0.2em 0.5em;
-	text-align: center;
+	padding: 0.6em 1rem;
+	text-align: left;
 
 	&::before {
 		content: '';
@@ -104,7 +106,7 @@ $box-image-width: 180px;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		// background-color: rgba(#000, 0.1);
+		background-color: rgba(#000, 0.5);
 		width: 100%;
 		height: 100%;
 		z-index: -1;
@@ -125,11 +127,12 @@ $box-image-width: 180px;
 	};
 }
 
-.box__title {
+.box_title {
 	display: block;
 	word-wrap: break-word;
 	font-size: 1.5rem;
 	font-weight: 300;
+	padding-bottom: 0;
 
 	@include media-query($sm) {
 		margin-top: -4px;
@@ -139,85 +142,63 @@ $box-image-width: 180px;
 	};
 }
 
-.box-tools {
-	display: none;
-	@media screen and (min-width: $sm) {
-		display: block;
-	}
+.boxTools_list {
+
 }
-.box-tool {
-	color: #999;
+
+.boxTool_item {
+	color: #bbb;
 	font-size: 0.7rem;
 	padding: 0.3em 0.6em;
-	border-left: 1px solid #ccc;
+	border-left: 1px solid #bbb;
+	float: left;
+
+	@include media-query($sm) {
+		color: #999;
+		font-size: 0.7rem;
+		padding: 0.3em 0.6em;
+		border-left: 1px solid #888;
+	}
 }
 
-.box-text {
-	// @include media-query($sm, $option:max) {
-	// 	@include position();
-	// 	width: 100%;
-	// 	text-shadow: 0 1px 1px #000;
-	// 	display: none;
-	// }
+.boxText {
 
 }
 
-.box__copy {
+.box_copy {
 	padding-top: 0.5em;
 	font-size: 1.1em;
+	display: none;
 
 	@include media-query($sm) {
 		display: block;
 	};
 }
 
-.box-readmore {
-
+.box_moreBtn {
+	@extend .button-round;
+	display: none;
 	font-size: 0.8em;
 	color: #666;
-	float: right;
 	margin-top: 1.5em;
-	@extend .button-round;
-
-	// @include media-query($sm, $option:max) {
-	// 	color: #fff;
-	// 	border: none;
-	// 	background: none;
-
-	// 	&:hover {
-	// 		background: none;
-	// 	}
-
-	// 	&:visited {
-	// 		color: #fff;
-	// 	}
-	// }
 
 	@include media-query($sm) {
-
 		font-size: 0.9em;
+		float: right;
+		display: inline-block;
 
 		&:hover {
 
 		}
-
-
-
-	}
-
-	&__container {
-		display: flex;
-		justify-content: flex-end;
-		width: 100%;
 	}
 }
 
-// .box__item--blog {
-//     width: 100%;
-//     height: auto;
-//     padding: 20px 0;
-//     margin: 0;
-//     margin-bottom: 20px;
-//     background-color: #fff;
-// }
+.box_moreBtn_container {
+	display: none;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+
+}
+
 

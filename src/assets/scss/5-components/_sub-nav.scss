@@ -1,7 +1,7 @@
 /* Component: Sub Navigation
 ============================================================================ */
 
-.sub-nav {
+.subNav {
 
 
     background-color: #fff;
@@ -35,7 +35,7 @@
 	}
 }
 
-.sub-nav__item {
+.subNav_item {
 	@include col(4);
 	display: inline-block;
 	text-align: center;

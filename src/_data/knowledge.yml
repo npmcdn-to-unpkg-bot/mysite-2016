@@ -53,6 +53,14 @@
     - title: MVC
     - title: BEM (Classnames)
 
+  - design-photo: 
+    - title: Photoshop
+    - title: Lightroom
+    - title: InDesign
+    - title: Sketch
+    - title: Illustrator
+    - title: Affinity Photo
+
   - backend: 
     - title: Database design
     - title: MySQL

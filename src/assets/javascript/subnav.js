@@ -1,4 +1,4 @@
-if(document.querySelector(".sub-nav") instanceof HTMLElement) {
+if(document.querySelector(".subNav") instanceof HTMLElement) {
 
 (function subNav() {
 
@@ -7,12 +7,12 @@ if(document.querySelector(".sub-nav") instanceof HTMLElement) {
 	});
 
 	var max_scroll = 0,
-		subnav = document.querySelector(".sub-nav");
+		subnav = document.querySelector(".subNav");
 
 	calcStartPosition();
 
 
-	if (document.querySelector('.sub-nav') instanceof HTMLElement) {
+	if (document.querySelector('.subNav') instanceof HTMLElement) {
 	    window.addEventListener('scroll', onScroll);
 	}
 
@@ -83,7 +83,7 @@ if(document.querySelector(".sub-nav") instanceof HTMLElement) {
 			    offset   = elemRect.top - bodyRect.top;
 
 			e.preventDefault();
-			TweenLite.to(window, 2, {scrollTo:{y:offset}, ease:Power2.ease});
+			TweenLite.to(window, 2, {scrollTo:{y:offset}, ease:Power4.ease});
 		});
 	}
 

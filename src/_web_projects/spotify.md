@@ -2,6 +2,7 @@
 title: Music Knowledge
 site_url: 
 date: 2015-08-01
+github_url: https://github.com/FuruholmAnton/Spotify-API-game
 featured: true
 image-preview: spotify_game-preview.jpg
 image-background: spotify_game--blur.jpg
@@ -16,8 +17,8 @@ tools:
 
 ---
 
-Music Knowledge is a site to test your music skills. It's connected to Spotify's API and the game is based on the user's own playlists.
+Music Knowledge is a game to test your music skills. It's connected to Spotify's API and the game is based on the logged in users own playlists.
 
 <!--more-->
 
-I made this Spotify web app as a school project when I studied in Canberra, Australia.
+I made this Music app as a school project when I studied in Canberra, Australia. It works, but needs a bit more love. 

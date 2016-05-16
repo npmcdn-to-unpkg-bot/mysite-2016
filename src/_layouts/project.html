@@ -5,16 +5,16 @@ layout: default
     <link itemprop="applicationCategory" href="http://schema.org/WebApplication"/>
 
     <!-- <header class="project-header" style="background-image: url({{ site.url }}/assets/images/{{ page.image-background }}); ">
-        <h1 class="project-title" itemprop="name">{{ page.title }}</h1>
+        <h1 class="pageProject_title" itemprop="name">{{ page.title }}</h1>
     </header> -->
-    <div class="project-content">
+    <div class="pageProject_content">
 
-        <div class="project__text wrapper-sm">
+        <div class="pageProject_text wrapper-sm">
             <h1 class="heading">{{ page.title }}</h1>
             {{ content }}
         </div>
 
-        <div class="project__info wrapper-sm">
+        <div class="pageProject_info wrapper-sm">
             {% if page.site_url or page.github_url %}
             <ul class="mb2">
                 <h3 class="heading">See more</h3>
@@ -31,10 +31,10 @@ layout: default
                 {% endif %}
             </ul>
             {% endif %}
-            <ul class="aside-list">
+            <ul class="pageProject_toolList">
                 <h3 class="heading">Tools</h3>
                 {% for tool in page.tools %}
-                    <li class="aside-item">{{ tool }}</li>
+                    <li class="pageProject_toolItem">{{ tool }}</li>
                 {% endfor %}
             </ul>
         </div>

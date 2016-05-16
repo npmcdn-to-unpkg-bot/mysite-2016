@@ -41,48 +41,55 @@ classes: page-home
 
 <div class="home">
 
-	<section class="home-intro" style="background-image: url(/assets/images/hobbit_house.jpg);">
-		<div class="home-intro__content">
-			<div class="home-intro__scale">
-				<p class="home-intro__text-welcome">Welcome</p>
-				<div class="home-intro__content-main">
-					<span class="home-intro__title-fix">TO</span>
-					<h1 class="home-intro__title">Furuholm</h1>
-					<span class="home-intro__title-fix">.COM</span>
+	<section class="homeIntro">
+		<div class="homeIntro_background" style="background-image: url(/assets/images/hobbit_house.jpg);"></div>
+		<div class="homeIntro_middle">
+			<div class="homeIntro_scale">
+				<p class="homeIntro_textWelcome">Welcome <b style="font-size: 0.9em">to</b></p>
+				<div class="homeIntro_siteName">
+					<span class="homeIntro_title-fixed" style="visibility: hidden;">TO</span>
+					<h1 class="homeIntro_title">Furuholm</h1>
+					<span class="homeIntro_title-fixed">.COM</span>
 				</div>
 			</div>
 		</div>
-		<h2 class="home-intro__text"><strong>Web</strong>Developer<br>
+		<h2 class="homeIntro_text"><strong>Web</strong>Developer<br>
 		Photo<strong>grapher</strong><br>
 		<strong>Fitness</strong>Enthusiast</h2>
-		<a href="#sandbox" class="home-intro__arrow-down anchor-link">
+		<a href="#sandbox" class="homeIntro_downArrow anchor-link">
 			<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4">
 				<path fill="#fff" d="M400.7 623L49 308l16-17.8 335.7 300.3L742 285l16 18-357.3 320z"/>
 			</svg>
 		</a>
 	</section>
 
+
+
 	<div style="height: 47px">
-		<nav class="sub-nav">
-			<ul class="wrapper wrapper-no-padding">
-				<li class="sub-nav__item"><a class="anchor-link" href="#web">Web Projects</a>
-				<li class="sub-nav__item"><a class="anchor-link" href="#photography">Photography</a>
-				<!-- <li class="sub-nav__item"><a href="#blog">Recent Blog Posts</a> -->
-				<li class="sub-nav__item"><a class="anchor-link" href="#about">Short About Me</a>
+		<nav class="subNav">
+			<ul class="subNav_list">
+				<li class="subNav_item"><a class="anchor-link" href="#web">Web Projects</a>
+				<li class="subNav_item"><a class="anchor-link" href="#photoAnchor">Photography</a>
+				<!-- <li class="subNav_item"><a href="#blog">Recent Blog Posts</a> -->
+				<li class="subNav_item"><a class="anchor-link" href="#about">Short About Me</a>
 			</ul>
 		</nav>
 	</div>
 
 	{% include modules/web-projects.html %}
 
-	<div class="home-background">
-		<h3>I love the way programming challenges my mind.</h3>
+	<div class="homeBackground">
+		<div class="homeBackground_inner">
+			<h3>I love the way programming challenges my mind.</h3>
+		</div>
 	</div>
 
 	{% include modules/photography.html %}
 
-	<div class="home-background">
-		<h3>Photography has helped me see the world in more detail.</h3>
+	<div class="homeBackground">
+		<div class="homeBackground_inner">
+			<h3>Photography has helped me see the world in more detail.</h3>
+		</div>
 	</div>
 
 	<div id="">

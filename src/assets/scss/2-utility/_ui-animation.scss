@@ -256,8 +256,8 @@
     animation-duration: $time;
     animation-delay: $delay;
     animation-fill-mode: both;
-    // transition-timing-function: ease-out;
-    animation-iteration-count: infinite;
+    transition-timing-function: ease-out;
+    animation-iteration-count: 1;
     transform-origin: center bottom;
     @include hacks();
 }

@@ -1,7 +1,7 @@
 
 (function box() {
 
-	var boxes = document.querySelectorAll(".box__image");
+	var boxes = document.querySelectorAll(".box_image");
 	localStorage.box_has_event = false;
 	localStorage.clicked_box = "";
 
@@ -28,11 +28,11 @@
 		}else {
 			localStorage.clicked_box = this.href;
 		}
-		var openBoxes = document.querySelectorAll(".box__item--open");
+		var openBoxes = document.querySelectorAll(".box_item--open");
 		for (var i = 0; i < openBoxes.length; i++) {
-			openBoxes[i].classList.remove("box__item--open");
+			openBoxes[i].classList.remove("box_item--open");
 		}
-		this.parentNode.classList.toggle("box__item--open");
+		this.parentNode.classList.toggle("box_item--open");
 	}
 
 	function mediaQuery () {

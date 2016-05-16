@@ -1,5 +1,5 @@
 (function siteNav (argument) {
-	var elem = document.querySelector(".site-nav__menu");
+	var elem = document.querySelector(".siteNav_menu");
 
 
 	function click() {
@@ -7,7 +7,7 @@
 	}
 
 	function toggleActive (e) {
-		document.body.classList.toggle("site-nav-mobile--active");
+		document.body.classList.toggle("siteNav-mobile--active");
 	}
 
 	click();

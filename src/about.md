@@ -32,7 +32,11 @@ classes:
         <p>I would definitly call myself a front-end developer, love working with HTML, CSS, JavaScript and PHP. But I've also worked with back-end code such as MySQL, noSQL, PHP on the back-end, some NodeJS. </p>
         <p>I'm also used to working with content management systems, specially Wordpress. 
         <p>If you would like to know more about my skills check out my <a href="https://github.com/FuruholmAnton" target="_blanck" class="link">Github page</a> where you can see some of my personal projects.</p>
+        <h4>Photography</h4>
+        <p>I loved photography since I was young. I was the first one in my family to by a digital camera and I since then I past on my old cameras to my parents.</p>
      </div>
+
+     
   </article>
     
 </div>

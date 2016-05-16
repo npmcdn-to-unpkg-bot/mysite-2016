@@ -1,20 +1,20 @@
-<section class="home-sandbox home-section">
-	<div class="anchor" id="web"></div>
+<section class="homeSection">
+	<i class="anchor" id="web"></i>
 
-	<header class="home-section__header">
-		<div class="wrapper-md home-heading__inner">
+	<header class="homeSection_header">
+		<div class="wrapper-md homeHeader_inner">
 
-			<h2 class="home-heading heading">
+			<h2 class="homeHeading heading">
 				Web Projects
 			</h2>
-			<p>These are some projects that I've developed for the web.</p>
-			<p class="home-section__border"></p>
+			<p>I love to build my own plug-ins, libraries or just small snippets to get a deeper understanding of what's under the hood.</p>
+			<p class="homeSection_border"></p>
 		</div>
 	</header>
 
 	<div class="wrapper-md">
 
-		<ul class="box__container">
+		<ul class="box_container">
 			{% assign projects = site.web_projects %}
 			{% for project in projects reversed %}
 				{% if project.featured == true  %}
@@ -23,5 +23,5 @@
 			{% endfor %}
 		</ul>
 	</div>
-	<a href="/web" class="home-section__moreBtn">See more</a>
+	<a href="/web" class="homeSection_moreBtn">See more</a>
 </section>

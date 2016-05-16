@@ -3,7 +3,13 @@
 
 {% include head.html %}
 
-<body class="body{% for class in page.classes %} {{class}}{% endfor %}">
+<body class="body{% for class in page.classes %} {{class}}{% endfor %} no-js">
+
+	<script type="text/javascript">
+		var body = document.body;
+		body.classList.add("has-js");
+		body.classList.remove("no-js");
+	</script>
 
     {% include header.html %}
 
@@ -13,8 +19,7 @@
 
     {% include footer.html %}
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenLite.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/ScrollToPlugin.min.js"></script>
+
 
 
 
@@ -22,7 +27,26 @@
     <!-- inject:js -->
     <script src="/assets/javascript/main.js"></script>
     <!-- endinject -->
+	<script type="text/javascript">
+		window.addEventListener("load", function () {
+			function func() {
+			 	var elGalleryImage = document.querySelector(".homePhoto_gallery img");
+			 	if(isInViewport(elGalleryImage)) {
+					animateGalleryImage();
+				}
+				window.addEventListener("scroll", function(){
+					var elGalleryImage = document.querySelector(".homePhoto_gallery img");
 
+					if(isInViewport(elGalleryImage)) {
+						animateGalleryImage();
+					}
+
+				});
+			 };
+			 turtle.init(func);
+			 walnut.init();
+		});
+	</script>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
