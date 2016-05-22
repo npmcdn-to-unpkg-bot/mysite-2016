@@ -149,7 +149,7 @@ var turtle = (function () {
             setImages();
 
         }else {
-            console.log('finished');
+            // console.log('finished');
             // ID('loadingMessage').style.display = 'none';
             var allImages = QSA('.turtlejs-item');
 

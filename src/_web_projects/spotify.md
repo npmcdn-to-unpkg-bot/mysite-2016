@@ -3,9 +3,8 @@ title: Music Knowledge
 site_url: 
 date: 2015-08-01
 github_url: https://github.com/FuruholmAnton/Spotify-API-game
-featured: true
 image-preview: spotify_game-preview.jpg
-image-background: spotify_game--blur.jpg
+image-background: spotify_game-blur.jpg
 image-main: spotify_game.png
 images:
   - spotify_game.png

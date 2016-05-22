@@ -1,3 +1,7 @@
+/*=======================================
+=            TurtleJS plugin            =
+=======================================*/
+
 .turtlejs-item {
 	cursor: pointer;
 	opacity: 0;
@@ -17,6 +21,12 @@
 	@extend .wrapper-md;
 	text-align: left;
 
+	.has-js & {
+		img {
+			transform: scale(0);
+		}
+	}
+
 	.no-js & {
 		@extend %clearfix;
 		img {
@@ -34,3 +44,8 @@
 		}
 	}
 }
+
+/*=====  End of TurtleJS plugin  ======*/
+
+
+

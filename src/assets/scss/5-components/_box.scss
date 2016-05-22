@@ -2,34 +2,74 @@
 ============================================================================ */
 $box-image-width: 180px;
 
+.box_item.box_item--open {
+	max-height: 1000px;
+    margin-bottom: 100px;
+    transform: translateY(-2%);
+
+    &:hover {
+    	transform: translateY(-2%);
+    }
+
+	.box_content {
+		position: relative;
+		padding-bottom: 2rem;
+
+		&::before {
+			content: '';
+		}
+
+	}
+
+	.box_copy {
+		transform: scale(1);
+		color: #fff;
+	}
+
+	.box_moreBtn {
+		transform: scale(1);
+	}
+}
+
 .box_item {
 	overflow: hidden;
 	position: relative;
 	display: inline-block;
 	background-color: #fff;
-	transition: all .1s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	vertical-align: top;
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	height: 100px;
+	max-height: 200px;
+	box-shadow: 0 2px 16px rgba(#000, 0.3);
 
 	&:last-of-type {
-		height: inherit;
+		// max-height: inherit;
 	}
 
-	@include media-query($xs) {
-		@include col(3);
 
-		&:nth-of-type(1n+3) {
-			margin-top: 0;
+
+
+	@include media-query($sm, $option:max) {
+
+		@for $i from 1 through 20 {
+			&:nth-of-type(#{$i}) {
+				z-index: #{$i};
+				@if $i != 1 {
+					margin-top: -100px;
+				}
+			}
 		}
-		&:nth-of-type(1n+4) {
-			// margin-top: 4px;
+		&:hover {
+			transform: translateY(-5%);
 		}
-	};
+	}
 
 	@include media-query($sm) {
+		margin-top: 0;
+		box-shadow: none;
+		max-height: inherit;
 		padding: 2.5rem 3rem;
 		border-bottom: 1px solid #eee;
 		@include col(1);
@@ -79,10 +119,10 @@ $box-image-width: 180px;
 }
 
 .box_container {
-	margin: {
-		left: -1rem;
-		right: -1rem;
-	}
+	// margin: {
+	// 	left: -1rem;
+	// 	right: -1rem;
+	// }
 }
 
 .box_content {
@@ -132,7 +172,7 @@ $box-image-width: 180px;
 	word-wrap: break-word;
 	font-size: 1.5rem;
 	font-weight: 300;
-	padding-bottom: 0;
+	padding-bottom: 6px;
 
 	@include media-query($sm) {
 		margin-top: -4px;
@@ -143,7 +183,7 @@ $box-image-width: 180px;
 }
 
 .boxTools_list {
-
+	@extend %clearfix;
 }
 
 .boxTool_item {
@@ -168,24 +208,28 @@ $box-image-width: 180px;
 .box_copy {
 	padding-top: 0.5em;
 	font-size: 1.1em;
-	display: none;
+	transform: scale(0);
+	transition: all 0.5s ease-in-out;
 
 	@include media-query($sm) {
-		display: block;
+		transform: scale(1);
 	};
 }
 
 .box_moreBtn {
 	@extend .button-round;
-	display: none;
 	font-size: 0.8em;
-	color: #666;
+	color: #ddd;
 	margin-top: 1.5em;
+	border-color: #ddd;
+	transform: scale(0);
 
 	@include media-query($sm) {
 		font-size: 0.9em;
 		float: right;
 		display: inline-block;
+		color: #666;
+		transform: scale(1);
 
 		&:hover {
 

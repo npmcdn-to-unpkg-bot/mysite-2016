@@ -1,7 +1,7 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: Furuholm
-description: '© Anton Furuholm'
+description: 'Anton Furuholm is a swedish front-end developer / designer. He makes websites as a living.'
 url: http://localhost:1337
 # url: furuholmanton.github.io
 # url: https://furuholm.se
