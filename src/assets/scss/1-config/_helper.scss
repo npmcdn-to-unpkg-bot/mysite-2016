@@ -63,13 +63,6 @@
 %wrapper {
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-
-    @include media-query($md) {
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
 }
 // Sass wrapper
 @mixin wrapper($width) {

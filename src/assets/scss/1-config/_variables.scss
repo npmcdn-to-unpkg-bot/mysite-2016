@@ -1,7 +1,9 @@
 // Fonts
-$font-copy: 'Lora', Cambria, Georgia, "Times New Roman", Times,serif;
-$font-main: 'Roboto', Arial, Helvetica, sans-serif;
-$font-heading: '';
+$font-sans: 'Roboto', Arial, Helvetica, sans-serif;
+$font-serif: 'Lora', Cambria, Georgia, "Times New Roman", Times,serif;
+$font-copy: $font-sans;
+$font-main: $font-sans;
+$font-heading: $font-serif;
 
 // Colors
 $color-main: #ffb106; // #fdb70a;
@@ -9,6 +11,9 @@ $color-main-dark: darken($color-main, 10%);
 $color-main-light: lighten($color-main, 10%);
 
 $color-secondary: #FFC107;
+$color-green: #37ad7a;
+$color-blue: #5059a0;
+$color-red: #37ad7a;
 
 $color-link: #283593;
 $color-link-visited: lighten(#283593, 15%);

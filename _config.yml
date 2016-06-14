@@ -1,16 +1,16 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: Furuholm
-description: 'Anton Furuholm is a swedish front-end developer / designer. He makes websites as a living.'
+description: 'Anton Furuholm is a swedish front-end developer. He makes websites as a living but also for his own projets. Check out the site to find out more.'
 url: http://localhost:1337
 # url: furuholmanton.github.io
-# url: https://furuholm.se
+# url: https://furuholm.com
 logo: /assets/images/logo-black.svg
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: src
 destination: dist
-exclude: ['assets']
+# exclude: ['assets']
 keep_files: []
 
 defaults:

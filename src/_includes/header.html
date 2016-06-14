@@ -21,7 +21,7 @@
     </a>
     <nav class="siteNav">
       <div class="siteNav_list" id="siteNav">
-        <p class="siteNav_explain">Pages:</p>
+        <p class="siteNav_explain">Menu:</p>
         {% for nav in site.data.pages %}
         	{% unless nav.title == page.title %}
           		<a class="siteNav_item" href="{{ nav.url }}">{{ nav.title }}</a>

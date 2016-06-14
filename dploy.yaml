@@ -1,0 +1,15 @@
+dev:
+  scheme: sftp
+  host: '146.185.171.76'
+  port: 22
+  user: 'root'
+  pass: '@Fuan9204'
+  check: true
+  secure: true
+  slots: 4
+  exclude: ['**/*']
+  include:
+    'dist/*': '/'
+  path:
+    local: '/'
+    remote: '/var/www/html'

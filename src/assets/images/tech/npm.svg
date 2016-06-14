@@ -1,0 +1,7 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="540px" height="210px" viewBox="0 0 540 210" enable-background="new 0 0 540 210" xml:space="preserve">
+<path d="M0,0h540v180H270v30H150v-30H0V0z M30,150h60V60h30v90h30V30H30V150z M180,30v150h60v-30h60V30H180z M240,60h30v60h-30V60z
+	 M330,30v120h60V60h30v90h30V60h30v90h30V30H330z"></path>
+<polygon fill="#FFFFFF" points="30,150 90,150 90,60 120,60 120,150 150,150 150,30 30,30 "></polygon>
+<path fill="#FFFFFF" d="M180,30v150h60v-30h60V30H180z M270,120h-30V60h30V120z"></path>
+<polygon fill="#FFFFFF" points="330,30 330,150 390,150 390,60 420,60 420,150 450,150 450,60 480,60 480,150 510,150 510,30 "></polygon>
+</svg>

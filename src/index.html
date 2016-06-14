@@ -7,95 +7,199 @@ classes: page-home
 ---
 
 <div class="startscreen">
-	<div class="startscreen-content">
-		<h2 class="startscreen-heading startscreen-heading--main">
-			<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4"><clipPath id="a"><path d="M-36 0H836v800H-36z"/></clipPath><g clip-path="url(#a)"><path d="M400-310L790.7 800H9.3L400-310z" fill="#ececec"/><clipPath id="b"><path d="M400-310L790.7 800H9.3L400-310z"/></clipPath><g clip-path="url(#b)"><path d="M1387.5 45L684-98.2 285.5 1032l703.7 143.5L1387.6 45z" fill="#e2e2e2"/><path d="M902.6 204.8l-424-299-79 309 317.2 238 185.8-248z" fill="#dcdcdc"/><path d="M639 0L237.4 1120.7l16.5 6L655.3 5.8 639 0z" fill="#fff"/></g></g><path d="M400 215.3L291 0h218L400 215.3z" fill="#b7b7b7"/></svg>
-		</h2>
-		<h3 class="startscreen-heading startscreen-heading--sub">
-			Web developer<br>
-			Photographer<br>
-			Fitness Enthusiast
-		</h3>
-	</div>
+    <div class="startscreen-content">
+        <h2 class="startscreen-heading startscreen-heading--main">
+            <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4"><clipPath id="a"><path d="M-36 0H836v800H-36z"/></clipPath><g clip-path="url(#a)"><path d="M400-310L790.7 800H9.3L400-310z" fill="#ececec"/><clipPath id="b"><path d="M400-310L790.7 800H9.3L400-310z"/></clipPath><g clip-path="url(#b)"><path d="M1387.5 45L684-98.2 285.5 1032l703.7 143.5L1387.6 45z" fill="#e2e2e2"/><path d="M902.6 204.8l-424-299-79 309 317.2 238 185.8-248z" fill="#dcdcdc"/><path d="M639 0L237.4 1120.7l16.5 6L655.3 5.8 639 0z" fill="#fff"/></g></g><path d="M400 215.3L291 0h218L400 215.3z" fill="#b7b7b7"/></svg>
+        </h2>
+        <h3 class="startscreen-heading startscreen-heading--sub">
+            Web developer<br>
+            Photographer<br>
+            Fitness Enthusiast
+        </h3>
+    </div>
 </div>
 <script type="text/javascript">
-	(function check_if_user_has_visited_before() {
+    (function check_if_user_has_visited_before() {
 
-		var start = document.querySelector('.startscreen');
-		if (start instanceof HTMLElement) {
-			if (typeof(Storage) !== 'undefined') {
-			    if (!localStorage.hasVisitedBefore) {
-			    	localStorage.hasVisitedBefore = true;
-			    	start.style.display = 'block';
-			    }
-			}
-		}
-	})();
+        var start = document.querySelector('.startscreen');
+        if (start instanceof HTMLElement) {
+            if (typeof(Storage) !== 'undefined') {
+                if (!localStorage.hasVisitedBefore) {
+                    localStorage.hasVisitedBefore = true;
+                    start.style.display = 'block';
+                }
+            }
+        }
+    })();
 </script>
 
-<div class="home">
+<div class="home" id="home">
 
-	<section class="homeIntro">
-		<div class="homeIntro_background" style="background-image: url(/assets/images/hobbit_house.jpg);"></div>
-		<div class="homeIntro_middle">
-			<div class="homeIntro_scale">
-				<p class="homeIntro_textWelcome">Welcome <b style="font-size: 0.9em">to</b></p>
-				<div class="homeIntro_siteName">
-					<span class="homeIntro_title-fixed" style="visibility: hidden;">TO</span>
-					<h1 class="homeIntro_title">Furuholm</h1>
-					<span class="homeIntro_title-fixed">.COM</span>
-				</div>
-			</div>
-		</div>
-		<h2 class="homeIntro_text"><strong>Web</strong>Developer<br>
-		Photo<strong>grapher</strong><br>
-		<strong>Fitness</strong>Enthusiast</h2>
-		<a href="#sandbox" class="homeIntro_downArrow anchor-link">
-			<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4">
-				<path fill="#fff" d="M400.7 623L49 308l16-17.8 335.7 300.3L742 285l16 18-357.3 320z"/>
-			</svg>
-		</a>
-	</section>
+    <section class="homeIntro">
+        <div class="homeIntro_background" style="background-image: url(/assets/images/hobbit_house.jpg);"></div>
+        <div class="homeIntro_middle">
+            <div class="homeIntro_scale">
+                <p class="homeIntro_textWelcome">Welcome <b style="font-size: 0.9em; font-weight: 300;">to</b></p>
+                <div class="homeIntro_siteName">
+                    <span class="homeIntro_title-fixed" style="visibility: hidden;">TO</span>
+                    <h1 class="homeIntro_title">Furuholm</h1>
+                    <span class="homeIntro_title-fixed">.COM</span>
+                </div>
+            </div>
+        </div>
+        <h2 class="homeIntro_text"><strong>Web</strong>Developer<br>
+        Photo<strong>grapher</strong><br>
+        <strong>Fitness</strong>Enthusiast</h2>
+        <a href="#sandbox" class="homeIntro_downArrow anchor-link">
+            <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4">
+                <path fill="#fff" d="M400.7 623L49 308l16-17.8 335.7 300.3L742 285l16 18-357.3 320z"/>
+            </svg>
+        </a>
+    </section>
 
 
 
-	<div style="height: 47px">
-		<nav class="subNav">
-			<ul class="subNav_list">
-				<li class="subNav_item"><a class="anchor-link" href="#web">Web Projects</a>
-				<li class="subNav_item"><a class="anchor-link" href="#photoAnchor">Photography</a>
-				<!-- <li class="subNav_item"><a href="#blog">Recent Blog Posts</a> -->
-				<li class="subNav_item"><a class="anchor-link" href="#about">Short About Me</a>
-			</ul>
-		</nav>
-	</div>
+    <div style="height: 47px">
+        <nav class="subNav">
+            <ul class="subNav_list">
+                <li class="subNav_item"><a class="anchor-link" href="#web">Web Projects</a>
+                <li class="subNav_item"><a class="anchor-link" href="#photoAnchor">Photography</a>
+                <!-- <li class="subNav_item"><a href="#blog">Recent Blog Posts</a> -->
+                <li class="subNav_item"><a class="anchor-link" href="#about">Short About Me</a>
+                <li class="subNav_item"><a class="anchor-link" href="#home">⇑ Top</a>
+            </ul>
+        </nav>
+    </div>
 
-	{% include modules/web-projects.html %}
+    <section class="columns">
+        <div class="columns_container">
 
-	<div class="homeBackground">
-		<div class="homeBackground_inner">
-			<h3 class="homeBackground_heading">I love the way programming challenges my mind.</h3>
-		</div>
-	</div>
+              <header class="sectionHeader">
+                <span class="sectionHeader_line"></span>
+                <h2 class="sectionHeader_heading u-color-green">
+                  Blog
+                </h2>
+                <p class="sectionHeader_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius sunt, asperiores, porro nisi ipsum quae.</p>
+              </header>
 
-	{% include modules/photography.html %}
+            <div class="columns_part">
+                <header class="columns_header">
+                    <img src="/assets/images/tech/html.svg" class="columns_image">
+                    <h2 class="columns_title">Web</h2>
+                </header>
+                <ul class="columns_list">
 
-	<div class="homeBackground">
-		<div class="homeBackground_inner">
-			<h3 class="homeBackground_heading">Photography has helped me see the world in more detail.</h3>
-		</div>
-	</div>
+                    <li class="columns_item">
+                        <h4 class="columns_heading">Rubrik</h4>
+                        <div class="columns_excerpt">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deserunt non quas, accusantium aliquid. Beatae consequuntur pariatur eveniet, nesciunt amet nulla natus.
+                        </div>
+                    </li>
 
-	<div id="">
+                    <li class="columns_item">
+                        <h4 class="columns_heading">Rubrik</h4>
+                        <div class="columns_excerpt">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deserunt non quas, accusantium aliquid. Beatae consequuntur pariatur eveniet, nesciunt amet nulla natus.
+                        </div>
+                    </li>
 
-		<!-- {% if site.posts %}
-			{% include modules/blog.html %}
-		{% endif %} -->
+                </ul>
+            </div>
 
-		{% include modules/about.html %}
+            <div class="columns_part">
+                <header class="columns_header">
+                    <img src="/assets/images/tech/git.svg" class="columns_image">
+                    <h2 class="columns_title">Health</h2>
+                </header>
+                <ul class="columns_list">
 
-		<h2 class="home-phone"><a href="tel:+4673-072 92 79">+46 730 72 92 79</a></h2>
-	</div>
+                    <li class="columns_item">
+                        <h4 class="columns_heading">Rubrik</h4>
+                        <div class="columns_excerpt">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deserunt non quas, accusantium aliquid. Beatae consequuntur pariatur eveniet, nesciunt amet nulla natus.
+                        </div>
+                    </li>
+
+                    <li class="columns_item">
+                        <h4 class="columns_heading">Rubrik</h4>
+                        <div class="columns_excerpt">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deserunt non quas, accusantium aliquid. Beatae consequuntur pariatur eveniet, nesciunt amet nulla natus.
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="columns_part">
+                <header class="columns_header">
+                    <img src="/assets/images/tech/css3.svg" class="columns_image">
+                    <h2 class="columns_title">My life</h2>
+                </header>
+                <ul class="columns_list">
+
+                    <li class="columns_item">
+                        <h4 class="columns_heading">Rubrik</h4>
+                        <div class="columns_excerpt">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deserunt non quas, accusantium aliquid. Beatae consequuntur pariatur eveniet, nesciunt amet nulla natus.
+                        </div>
+                    </li>
+
+                    <li class="columns_item">
+                        <h4 class="columns_heading">Rubrik</h4>
+                        <div class="columns_excerpt">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque deserunt non quas, accusantium aliquid. Beatae consequuntur pariatur eveniet, nesciunt amet nulla natus.
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    {% include modules/web-projects.html %}
+
+    <div class="tech">
+        <ul class="techList">
+        <header class="homeSection_header">
+            <h2 class="homeHeading heading">
+                Technologies / Tools
+            </h2>
+            <p>Some technologies and tools I'm using/have used on various projects.</p>
+            <p class="homeSection_border"></p>
+        </header>
+            {% for tech in site.data.tools %}
+                    <li class="techItem">
+                        <img class="techIcon" src="{{ site.baseurl }}/assets/images/tech/{{ tech.path }}" alt="image" />
+                    </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="homeBackground">
+        <div class="homeBackground_inner">
+            <h3 class="homeBackground_heading">I love the way programming challenges my mind.</h3>
+        </div>
+    </div>
+
+    {% include modules/photography.html %}
+
+    <div class="homeBackground" style="background-image: url('/assets/images/background-1.jpg')">
+        <div class="homeBackground_inner">
+            <h3 class="homeBackground_heading">Photography has helped me see the world in a new perspective.</h3>
+        </div>
+    </div>
+
+    <div id="">
+
+        <!-- {% if site.posts %}
+            {% include modules/blog.html %}
+        {% endif %} -->
+
+        {% include modules/about.html %}
+
+        <h2 class="home-phone"><a href="tel:+4673-072 92 79">+46 730 72 92 79</a></h2>
+    </div>
 </div>
 
 <script type="text/javascript" src="/assets/vendors/walnut/walnut.js" walnut-script></script>

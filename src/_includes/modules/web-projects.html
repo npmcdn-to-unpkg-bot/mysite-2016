@@ -1,27 +1,22 @@
 <section class="homeSection">
 	<i class="anchor" id="web"></i>
 
-	<header class="homeSection_header">
-		<div class="wrapper-md homeHeader_inner">
-
-			<h2 class="homeHeading heading">
-				Web Projects
-			</h2>
-			<p>I love to build my own plug-ins, libraries or just small snippets to get a deeper understanding of what's under the hood.</p>
-			<p class="homeSection_border"></p>
-		</div>
+	<header class="sectionHeader">
+    <span class="sectionHeader_line"></span>
+		<h2 class="sectionHeader_heading ">
+			Web Projects
+		</h2>
+		<p class="sectionHeader_text">I love to build my own plug-ins, libraries or just small snippets to get a deeper understanding of what's under the hood.</p>
 	</header>
 
-	<div class="wrapper-md">
+	<ul class="box_container">
+		{% assign projects = site.web_projects %}
+		{% for project in projects reversed %}
+			{% if project.featured == true  %}
+				{% include box.html %}
+			{% endif %}
+		{% endfor %}
+	</ul>
 
-		<ul class="box_container">
-			{% assign projects = site.web_projects %}
-			{% for project in projects reversed %}
-				{% if project.featured == true  %}
-					{% include box.html %}
-				{% endif %}
-			{% endfor %}
-		</ul>
-	</div>
 	<a href="/web" class="homeSection_moreBtn">See more</a>
 </section>

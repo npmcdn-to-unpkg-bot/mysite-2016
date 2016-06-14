@@ -1,7 +1,7 @@
 
 (function box() {
 
-	var boxes = document.querySelectorAll(".box_item");
+	var boxes = document.querySelectorAll(".boxPreview");
 	localStorage.box_has_event = false;
 	localStorage.clicked_box = "";
 
@@ -19,20 +19,25 @@
 
 	function openBox(e) {
 		e.preventDefault();
+		if( this.parentElement.querySelector(".boxFull_inner").offsetHeight > window.innerHeight ) {
+			this.parentElement.classList.add("boxFull-stickToTop");
+		} else {
+			this.parentElement.classList.remove("boxFull-stickToTop");
+		}
+		this.parentElement.classList.toggle("box_item--open");
+		document.body.classList.toggle("body-boxItem-open");
 
-		// if (localStorage.clicked_box === this.href) {
-		// 	window.location.href = this.href;
-		// } else {
-		// 	localStorage.clicked_box = this.href;
-		// }
+		this.parentElement.querySelector(".box_image").addEventListener("click", closeBox);
+	}
+
+	function closeBox() {
+		document.body.classList.remove("body-boxItem-open");
 		var openBoxes = document.querySelectorAll(".box_item--open");
 		for (var i = 0; i < openBoxes.length; i++) {
 			if(openBoxes[i] != this) {
 				openBoxes[i].classList.remove("box_item--open");
 			}
 		}
-		this.classList.add("box_item--open");
-		this.removeEventListener("click", openBox);
 	}
 
 	function mediaQuery () {
@@ -45,6 +50,7 @@
 		} else {
 			deinit();
 			localStorage.box_has_event = "false";
+			document.body.classList.remove("body-boxItem-open");
 		}
 	}
 
@@ -60,14 +66,5 @@
  			location.href = this.href;
 		});
 	}
-
-	// var boxesContent = document.querySelectorAll(".box_content");
-
-	// for (var i = 0; i < boxesContent.length; i++) {
-	// 	boxesContent[i].addEventListener("click", function(e) {
- // 			e.preventDefault();
-	// 	});
-	// }
-
 
 }())

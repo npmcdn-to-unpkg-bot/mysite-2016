@@ -6,37 +6,48 @@ classes:
   - page-about
 ---
 
-<div class="wrapper-sm main">
+<div class="">
+
+  <header class="sectionHeader">
+    <span class="sectionHeader_line"></span>
+    <h2 class="sectionHeader_heading">
+      About me
+    </h2>
+    <p class="sectionHeader_text">My name is Anton Furuholm and I'm the creator of furuholm.com. As you might expect I make my living as a web developer. For now, I work at a great agency <a href="//grandpublic.se" target="_blanck" class="link">Grand Public</a>, but I'm soon heading out on a big adventure crossing the US of A on a bicycle.</p>
+  </header>
+    
+  <article class="page-article">
+    
+    <div class="page-copy copy">
+
+        <p>I'm from a lovely country called Sweden. Living deep in the green woods in a small town called Eksjö known for its old wooden buildings.</p>
+
+        <p>The reason I started programming websites was due to many reasons but before I ever got my eye on it I had my eyes on programming robots. That may sound cool and it was, but after a year in university, I decided I had to change life course. With a background of making art, programming cool robots didn't really satisfy me. Ironically, I search the web for what could be my future direction and that's when I found something that offered both art and programming, Graphic Design and Web Development. To start studying that was probably one of the most successful and important decisions in my life. It quickly became my new and greatest hobby. Developing for the web.</p>
+
+        <img class="page-image" src="/assets/images/profile-2.jpg">
+
+        <p>I am what's called a front-end developer. I work mostly with programming languages called HTML, CSS, JavaScript and PHP. But I’ve also worked with back-end languages such as MySQL, noSQL, PHP on the back-end, and some NodeJS. I also work with content management systems, such as Wordpress and recently Kirby.</p>
+
+        <p>If you would like to know more about what I have done check out my <a href="https://github.com/FuruholmAnton" target="_blanck" class="link">Github page</a> where you can see the code behind some of my personal projects.</p>
+
+        <br>
+
+        <h4>Photography</h4>
+        <p>Photography has been a big interest since I was young. but it was not until I undertook a course on photography at my university that I realized my passion for it. I bought my first DSLR and started shooting at everything and everyone. I think I'm very fortuned to have acquired this interest because it has helped me see the world in a new perspective. I have started to see things that I didn't notice of before. </p>
+     </div>
+  </article>
+
   <article class="page-article">
     <h1 class="page-heading">About this site</h1>
     <div class="page-border"></div>
     <div class="page-copy copy">
-        <p>This site is built with static HTML files using a generator called <a href="https://jekyllrb.com/" class="link" target="_blanck">Jekyll</a>. I chose this to make the site more secure and fast.
+        <p>This site, furuholm.com, was built using static HTML files that were created by a generator named <a href="https://jekyllrb.com/" class="link" target="_blanck">Jekyll</a>. The reason for using static HTML and not a CMS was mostly because of security reasons and also to make it a bit faster, due to not having to render anything on the server before sending the files to the user.
         <br>
         <br>
-        I have chosen to avoid using plugins and libraries as much as possible. For this site I've used a smooth-scrolling plugin from <a href="http://greensock.com/ScrollToPlugin" class="link" target="_blanck">GreenSock.com</a> to make it durrable and less buggy.</p>
+        Because I like to build my own plugins and libraries I haven't used many created by other developers. But I do know my limits and I don't want to invent the wheel again if I can't make it better. For this site, I’ve tried using a plugin from <a href="http://greensock.com/ScrollToPlugin" class="link" target="_blanck">GreenSock.com</a> to make animations more durable and less buggy.
+        </p>
         
     </div>
-  </article>
-    
-  <article class="page-article">
-    <h1 class="page-heading">About me</h1>
-    <div class="page-border"></div>
-    
-    <div class="page-copy copy">
-        <p>I'm one of those awesome web developer people. I love sitting down in front of my MacBook writing beautiful lines of code, with a coffee cup not far away.
-        </p>
-        <p>By the way I from Sweden and I'm currently at a agency called <a href="//grandpublic.se" target="_blanck" class="link">Grand Public</a>. Before that I studied web development and graphic design for 2 years and just web development for one semester in the capital of Australia as an exchange student.
-        </p>
-        <img class="page-image" src="/assets/images/profile-2.jpg">
-        <p>I would definitly call myself a front-end developer, love working with HTML, CSS, JavaScript and PHP. But I've also worked with back-end code such as MySQL, noSQL, PHP on the back-end, some NodeJS. </p>
-        <p>I'm also used to working with content management systems, specially Wordpress. 
-        <p>If you would like to know more about my skills check out my <a href="https://github.com/FuruholmAnton" target="_blanck" class="link">Github page</a> where you can see some of my personal projects.</p>
-        <h4>Photography</h4>
-        <p>I loved photography since I was young. I was the first one in my family to by a digital camera and I since then I past on my old cameras to my parents.</p>
-     </div>
-
-     
   </article>
     
 </div>
