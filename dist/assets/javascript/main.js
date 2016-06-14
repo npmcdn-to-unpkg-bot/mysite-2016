@@ -42,61 +42,63 @@ function once(fn, context) {
  *
  */
 
-if (!Cache.prototype.addAll) {
-  Cache.prototype.addAll = function addAll(requests) {
-    var cache = this;
+if (typeof Cache === "function") {
+  if (!Cache.prototype.addAll) {
+    Cache.prototype.addAll = function addAll(requests) {
+      var cache = this;
 
-    // Since DOMExceptions are not constructable:
-    function NetworkError(message) {
-      this.name = 'NetworkError';
-      this.code = 19;
-      this.message = message;
-    }
-    NetworkError.prototype = Object.create(Error.prototype);
+      // Since DOMExceptions are not constructable:
+      function NetworkError(message) {
+        this.name = 'NetworkError';
+        this.code = 19;
+        this.message = message;
+      }
+      NetworkError.prototype = Object.create(Error.prototype);
 
-    return Promise.resolve().then(function () {
-      if (arguments.length < 1) throw new TypeError();
+      return Promise.resolve().then(function () {
+        if (arguments.length < 1) throw new TypeError();
 
-      // Simulate sequence<(Request or USVString)> binding:
-      var sequence = [];
+        // Simulate sequence<(Request or USVString)> binding:
+        var sequence = [];
 
-      requests = requests.map(function (request) {
-        if (request instanceof Request) {
-          return request;
-        } else {
-          return String(request); // may throw TypeError
-        }
+        requests = requests.map(function (request) {
+          if (request instanceof Request) {
+            return request;
+          } else {
+            return String(request); // may throw TypeError
+          }
+        });
+
+        return Promise.all(requests.map(function (request) {
+          if (typeof request === 'string') {
+            request = new Request(request);
+          }
+
+          var scheme = new URL(request.url).protocol;
+
+          if (scheme !== 'http:' && scheme !== 'https:') {
+            throw new NetworkError("Invalid scheme");
+          }
+
+          return fetch(request.clone());
+        }));
+      }).then(function (responses) {
+        // TODO: check that requests don't overwrite one another
+        // (don't think this is possible to polyfill due to opaque responses)
+        return Promise.all(responses.map(function (response, i) {
+          return cache.put(requests[i], response);
+        }));
+      }).then(function () {
+        return undefined;
       });
-
-      return Promise.all(requests.map(function (request) {
-        if (typeof request === 'string') {
-          request = new Request(request);
-        }
-
-        var scheme = new URL(request.url).protocol;
-
-        if (scheme !== 'http:' && scheme !== 'https:') {
-          throw new NetworkError("Invalid scheme");
-        }
-
-        return fetch(request.clone());
-      }));
-    }).then(function (responses) {
-      // TODO: check that requests don't overwrite one another
-      // (don't think this is possible to polyfill due to opaque responses)
-      return Promise.all(responses.map(function (response, i) {
-        return cache.put(requests[i], response);
-      }));
-    }).then(function () {
-      return undefined;
-    });
-  };
+    };
+  }
 }
 "use strict";
 
 ;(function () {
 
-  if (typeof TweenMax === "function") {
+  if (typeof TweenLite === "function") {
     var elemsInbetween, elGalleryImage, listInbetween;
     var animateInbetweenBackgroundHeading;
     var animateGalleryImage;
@@ -105,7 +107,7 @@ if (!Cache.prototype.addAll) {
       var onScrollAnimateBackgroundHeading = function onScrollAnimateBackgroundHeading() {
         listInbetween.forEach(function (el, index) {
           if (enteredViewport(el)) {
-            TweenMax.from(el.querySelector(".homeBackground_heading"), 1.4, { opacity: 0, y: -40, ease: Power2.easeOut, delay: 0.5 });
+            TweenLite.from(el.querySelector(".homeBackground_heading"), 1.4, { opacity: 0, y: -40, ease: Power2.easeOut, delay: 0.5 });
             window.removeEventListener("scroll", onScrollAnimateBackgroundHeading);
             // animateInbetweenBackgroundHeading(el);
           }
@@ -118,18 +120,18 @@ if (!Cache.prototype.addAll) {
 
 
       window.addEventListener("load", function () {
-        TweenMax.fromTo(".homeIntro_textWelcome", 3, { y: -70, delay: 0.5 }, { opacity: 1, y: 0, ease: Back.easeOut });
-        TweenMax.to(".homeIntro_background", 40, { scale: 1.2, ease: Power0.easeOut, delay: 1.5 });
+        TweenLite.fromTo(".homeIntro_textWelcome", 3, { y: -70, delay: 0.5 }, { opacity: 1, y: 0, ease: Back.easeOut });
+        TweenLite.to(".homeIntro_background", 40, { scale: 1.2, ease: Power0.easeOut, delay: 1.5 });
 
         window.addEventListener("scroll", onScrollAnimateBackgroundHeading);
       });
 
       animateInbetweenBackgroundHeading = once(function (el) {
-        TweenMax.from(el.querySelector(".homeBackground_heading"), 1.4, { opacity: 0, y: -40, ease: Power2.easeOut, delay: 0.5 });
+        TweenLite.from(el.querySelector(".homeBackground_heading"), 1.4, { opacity: 0, y: -40, ease: Power2.easeOut, delay: 0.5 });
       });
       animateGalleryImage = once(function () {
         var elBackgroundHeading = document.querySelectorAll(".homePhoto_gallery img");
-        TweenMax.to(elBackgroundHeading, 3, { scale: 1, ease: Power4.easeOut, delay: 0 });
+        TweenLite.to(elBackgroundHeading, 3, { scale: 1, ease: Power4.easeOut, delay: 0 });
       });
 
 
@@ -155,12 +157,12 @@ if (!Cache.prototype.addAll) {
             window.addEventListener("scroll", animateGallery);
 
             function animateGallery() {
-              var elGalleryImages = document.querySelectorAll(".homePhoto_gallery img");
-              for (var i = 0; i < elGalleryImages.length; i++) {
-                elGalleryImages[i].style.willChange = "transform";
-              }
 
-              if (isInViewport(elGalleryImages[0])) {
+              if (isInViewport(document.querySelector(".homePhoto_gallery img"))) {
+                var elGalleryImages = document.querySelectorAll(".homePhoto_gallery img");
+                for (var i = 0; i < elGalleryImages.length; i++) {
+                  elGalleryImages[i].style.willChange = "transform";
+                }
                 animateGalleryImage();
                 window.removeEventListener("scroll", animateGallery);
               }

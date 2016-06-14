@@ -9,7 +9,7 @@ dev:
   slots: 4
   exclude: ['**/*']
   include:
-    'dist/*': '/'
+    'dist/**/*': '/'
   path:
     local: '/'
     remote: '/var/www/html'
