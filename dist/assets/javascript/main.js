@@ -96,8 +96,8 @@ if (typeof Cache === "function") {
 }
 "use strict";
 
-;(function () {
-
+// ;(function(){
+window.addEventListener("DOMContentLoaded", function () {
   if (typeof TweenMax === "function") {
     var elemsInbetween, elGalleryImage, listInbetween;
     var animateInbetweenBackgroundHeading;
@@ -177,7 +177,8 @@ if (typeof Cache === "function") {
       ;
     })();
   } // End if TweenLite
-})();
+  // }
+}());
 "use strict";
 
 (function box() {
