@@ -7,9 +7,7 @@ dev:
   check: true
   secure: true
   slots: 4
-  exclude: ['**/*']
-  include:
-    'dist/**/*': '/'
+  exclude: ['.tmp', 'node_modules', 'src', '.*', '_*', 'Gemfile*', 'gulp*', '*.json', '*.yaml', '*.yml']
   path:
     local: '/'
     remote: '/var/www/html'
