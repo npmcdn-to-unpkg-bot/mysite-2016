@@ -33,13 +33,16 @@ window.addEventListener("DOMContentLoaded", (function () {
     });
 
     window.addEventListener("DOMContentLoaded", (function (turtle) {
-      turtle.init(turtleCallback);
+
       if(document.querySelector("[walnut-script]") instanceof HTMLElement) {
         walnut.init();
       }
-
-
     })(turtle));
+
+    imagesLoaded( document.querySelector('.homePhoto_gallery'), function( instance ) {
+      console.log('all images are loaded');
+      turtle.init(turtleCallback);
+    });
 
     function turtleCallback() {
       // Runs after TurtleJS
