@@ -1,0 +1,14 @@
+
+.update {
+  background: #f2f2f2;
+}
+.update_inner {
+  @include wrapper(600px);
+  padding: 2rem 1rem;
+}
+
+.update_link {
+  display: inline-block;
+  color: $color-link;
+  // text-decoration: underline;
+}

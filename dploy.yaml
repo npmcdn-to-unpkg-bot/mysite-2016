@@ -1,13 +1,13 @@
 dev:
   scheme: sftp
-  host: '146.185.171.76'
+  host: '188.166.31.48'
   port: 22
   user: 'root'
   pass: '@Fuan9204'
   check: true
   secure: true
   slots: 4
-  exclude: []
+  exclude: ['.git*']
   path:
     local: 'dist'
     remote: '/var/www/html'

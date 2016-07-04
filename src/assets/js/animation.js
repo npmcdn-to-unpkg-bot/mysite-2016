@@ -1,4 +1,4 @@
-// ;(function(){
+
 window.addEventListener("DOMContentLoaded", (function () {
   if(typeof TweenMax === "function") {
 
@@ -6,12 +6,10 @@ window.addEventListener("DOMContentLoaded", (function () {
         elGalleryImage  = document.querySelector(".homePhoto_gallery img"),
         listInbetween   = Array.prototype.slice.call(elemsInbetween,0);
 
-    window.addEventListener("DOMContentLoaded", function () {
-      TweenMax.fromTo(".homeIntro_textWelcome", 3, {y: -70, delay: 0.5}, { opacity: 1, y:0, ease:Back.easeOut });
-      TweenMax.to(".homeIntro_background", 40, {scale: 1.2, ease:Power0.easeOut, delay: 1.5});
+    TweenMax.fromTo(".homeIntro_textWelcome", 3, {y: -70, delay: 0.5}, { opacity: 1, y:0, ease:Back.easeOut });
+    TweenMax.to(".homeIntro_background", 40, {scale: 1.2, ease:Power0.easeOut, delay: 1.5});
 
-      window.addEventListener("scroll", onScrollAnimateBackgroundHeading);
-    });
+    window.addEventListener("scroll", onScrollAnimateBackgroundHeading);
 
     function onScrollAnimateBackgroundHeading(){
       listInbetween.forEach(function(el, index) {
@@ -33,7 +31,6 @@ window.addEventListener("DOMContentLoaded", (function () {
     });
 
     window.addEventListener("DOMContentLoaded", (function (turtle) {
-
       if(document.querySelector("[walnut-script]") instanceof HTMLElement) {
         walnut.init();
       }
@@ -63,7 +60,7 @@ window.addEventListener("DOMContentLoaded", (function () {
         element: document.querySelector(".homePhoto_gallery"),
 
         handler: function(direction) {
-          console.log("Trigger waypoints " + direction);
+          // console.log("Trigger waypoints " + direction);
           // notify(this.element.id + ' triggers at ' + this.triggerPoint);
           var elGalleryImages = document.querySelectorAll(".homePhoto_gallery img");
           for (var i = 0; i < elGalleryImages.length; i++) {
@@ -72,14 +69,14 @@ window.addEventListener("DOMContentLoaded", (function () {
           animateGalleryImage();
           // window.removeEventListener("scroll", animateGallery);
         },
-        offset: '25%'
+        offset: "200"
       });
 
      };
 
 
   } // End if TweenLite
-// }
+
 })());
 
 

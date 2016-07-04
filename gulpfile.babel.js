@@ -148,7 +148,7 @@ gulp.task('scripts', () =>
   // NOTE: The order here is important since it's concatenated in order from
   // top to bottom, so you want vendor scripts etc on top
   gulp.src([
-    'src/assets/javascript/**/*.js'
+    'src/assets/js/**/*.js'
   ])
     .pipe($.newer('.tmp/assets/javascript/main.js', {dest: '.tmp/assets/javascript', ext: '.js'}))
     .pipe($.if(!argv.prod, $.sourcemaps.init()))
@@ -177,6 +177,10 @@ gulp.task('scripts', () =>
     .pipe($.if(!argv.prod, browserSync.stream()))
 );
 
+
+var transform = function (filepath, file, i, length) {
+    return '<script src="' + filepath + '" async></script>';
+}
 // 'gulp inject:head' -- injects our style.css file into the head of our HTML
 gulp.task('inject:head', () =>
   gulp.src('src/_includes/head.html')
@@ -189,10 +193,19 @@ gulp.task('inject:head', () =>
 
 // 'gulp inject:footer' -- injects our index.js file into the end of our HTML
 gulp.task('inject:footer', () =>
-  gulp.src('src/_layouts/default.html')
+  gulp.src('src/_includes/footer.html')
     .pipe($.inject(gulp.src('.tmp/assets/javascript/*.js',
-                            {read: false}), {ignorePath: '.tmp'}))
-    .pipe(gulp.dest('src/_layouts'))
+      {
+        read: false
+      }),
+      {
+        ignorePath: '.tmp',
+        transform: function (filepath, file, i, length) {
+          return '<script src="' + filepath + '" async></script>';
+        }
+      })
+    )
+    .pipe(gulp.dest('src/_includes'))
 );
 
 // 'gulp images' -- optimizes and caches your images
@@ -277,7 +290,7 @@ gulp.task('serve', () => {
   // Watch various files for changes and do the needful
   gulp.watch(['src/**/*.md', 'src/**/*.html', 'src/**/*.yml'], gulp.series('jekyll', reload));
   gulp.watch(['src/**/*.xml', 'src/**/*.txt'], gulp.series('jekyll'));
-  gulp.watch('src/assets/javascript/**/*.js', gulp.series('scripts'));
+  gulp.watch('src/assets/js/**/*.js', gulp.series('scripts'));
   gulp.watch('src/assets/scss/**/*.scss', gulp.series('styles'));
   gulp.watch('src/assets/images/**/*', gulp.series('images'), reload);
   gulp.watch('src/assets/vendors/**/*', gulp.series('vendors'), reload);
